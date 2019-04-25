@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using Open.HospitalRegistry.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Open.Infra;
 
 namespace Open.HospitalRegistry
@@ -51,7 +52,7 @@ namespace Open.HospitalRegistry
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -68,18 +69,32 @@ namespace Open.HospitalRegistry
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-            app.UseRouting(routes =>
-            {
-                routes.MapApplication();
-                routes.MapControllerRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
-            });
-
             app.UseCookiePolicy();
+
+            app.UseRouting(); //added this
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
+            });
+            //Commented out this becouse of sdk update. Old sdk generated code
+            //app.UseRouting(routes =>
+            //{
+            //    routes.MapApplication();
+            //    routes.MapControllerRoute(
+            //        name: "default",
+            //        template: "{controller=Home}/{action=Index}/{id?}");
+            //});
+
+
+
+
         }
     }
 }
