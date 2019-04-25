@@ -47,8 +47,13 @@ namespace Open.HospitalRegistry
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
-            services.AddMvc()
+            services.AddControllersWithViews()
                 .AddNewtonsoftJson();
+            services.AddRazorPages();
+
+            //Removed becouse new sdk created other ones. Which is right up.
+            //services.AddMvc()
+            //    .AddNewtonsoftJson();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -91,8 +96,6 @@ namespace Open.HospitalRegistry
             //        name: "default",
             //        template: "{controller=Home}/{action=Index}/{id?}");
             //});
-
-
 
 
         }
