@@ -13,6 +13,7 @@ namespace Open.Data.Patient
 
         [ScaffoldColumn(false)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
         public int PatientId { get; set; }
         
         //[NameValidation] Add validation as soon as validation class i done!
