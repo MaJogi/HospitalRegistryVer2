@@ -8,15 +8,30 @@ using Microsoft.AspNetCore.Authorization;
 using Open.HospitalRegistry.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Open.Domain.Patient;
 using Open.HospitalRegistry.Data;
 using Open.Infra;
+using Open.Facade.Patient;
 
 namespace Open.HospitalRegistry.Controllers
 {
     public class PatientController : Controller
     {
-        private readonly RegistryDbContext db;
-        public PatientController(RegistryDbContext db) { this.db = db; }
+        private readonly IPatientObjectsRepository repository;
+
+        public PatientController(IPatientObjectsRepository r)
+        {
+            repository = r;
+        }
+
+        [Authorize]
+        public async Task<IActionResult> Index()
+        {
+            var l = await repository.GetObjectList();
+            return View(new PatientViewModelsList(l));
+        }
+        //private readonly RegistryDbContext db;
+        //public PatientController(RegistryDbContext db) { this.db = db; }
         //[Authorize]
         //public IActionResult Index()
         //{
