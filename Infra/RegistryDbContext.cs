@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Open.Data;
+using Open.Data.Patient;
 
 namespace Open.Infra
 {
@@ -7,12 +8,14 @@ namespace Open.Infra
     {
         public RegistryDbContext(DbContextOptions<RegistryDbContext> options) : base(options) { }
 
-        //protected override void OnModelCreating(ModelBuilder builder)
-        //{
-        //    base.OnModelCreating(builder);
-        //    builder.Entity<Patient>().ToTable("Patients");
-        //}
+        public DbSet<PatientDbRecord> Patients { get; set; }
 
-        //public DbSet<Patient> Patients { get; set; }
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            builder.Entity<PatientDbRecord>().ToTable("Patients");
+        }
+
+
     }
 }

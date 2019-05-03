@@ -9,7 +9,7 @@ namespace Open.Core
     {
         Task<T> GetObject(int id);
 
-        Task<IEnumerable<T>> GetObjectList();
+        Task<IEnumerable<T>> GetObjectsList();
 
         Task<T> AddObject(T o);
 

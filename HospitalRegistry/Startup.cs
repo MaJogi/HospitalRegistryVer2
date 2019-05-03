@@ -14,7 +14,9 @@ using Open.HospitalRegistry.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Open.Domain.Patient;
 using Open.Infra;
+using Open.Infra.Patient;
 
 namespace Open.HospitalRegistry
 {
@@ -46,11 +48,11 @@ namespace Open.HospitalRegistry
             services.AddDefaultIdentity<IdentityUser>()
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-
+           
             services.AddControllersWithViews()
                 .AddNewtonsoftJson();
             services.AddRazorPages();
-
+            services.AddScoped<IPatientObjectsRepository, PatientObjectsRepository>();
             //Removed becouse new sdk created other ones. Which is right up.
             //services.AddMvc()
             //    .AddNewtonsoftJson();

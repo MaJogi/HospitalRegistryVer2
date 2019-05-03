@@ -27,7 +27,7 @@ namespace Open.HospitalRegistry.Controllers
         [Authorize]
         public async Task<IActionResult> Index()
         {
-            var l = await repository.GetObjectList();
+            var l = await repository.GetObjectsList();
             return View(new PatientViewModelsList(l));
         }
         //private readonly RegistryDbContext db;
