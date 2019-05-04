@@ -10,7 +10,7 @@ namespace Open.Facade.Patient
     public class PatientViewModel
     {
         [DisplayName("ID")]
-        public int PatientId { get; set; }
+        public string PatientId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string IdCode { get; set; }

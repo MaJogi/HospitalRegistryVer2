@@ -16,7 +16,7 @@ namespace Open.Infra.Patient
             db = context; 
         }
 
-        public async Task<PatientObject> GetObject(int id)
+        public async Task<PatientObject> GetObject(string id)
         {
             var o = await db.Patients.FindAsync(id);
             return new PatientObject(o);

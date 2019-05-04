@@ -7,7 +7,7 @@ namespace Open.Core
 {
     public interface IObjectsRepository<T>
     {
-        Task<T> GetObject(int id);
+        Task<T> GetObject(string id);
 
         Task<IEnumerable<T>> GetObjectsList();
 

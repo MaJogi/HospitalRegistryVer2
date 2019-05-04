@@ -56,6 +56,32 @@ namespace Open.HospitalRegistry.Controllers
         {
             return View(new PatientViewModel());
         }
+
+        [Authorize]
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(string id)
+        {
+
+            var o = await repository.GetObject(id);
+
+            repository.DeleteObject(o);
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        [Authorize]
+        public async Task<IActionResult> Delete(string? id)
+        {
+            //if (id == null) return NotFound();
+            //Patient patient = db.Patients.Find(id);
+            //if (patient == null) return NotFound();
+            //return View("Delete", patient);
+            return View(new PatientViewModel());
+
+        }
+       
+
         //[Authorize]
         //[ValidateAntiForgeryToken]
         //public IActionResult SavePatient(Patient p, string BtnSubmit)
@@ -71,26 +97,6 @@ namespace Open.HospitalRegistry.Controllers
         //    Patients patients = new Patients();
         //    patients.Save(p, db);
         //    return RedirectToAction("Index");
-        //}
-        //[Authorize]
-        //public async Task<IActionResult> Delete(int? id)
-        //{
-        //    if (id == null) return NotFound();
-        //    Patient patient = db.Patients.Find(id);
-        //    if (patient == null) return NotFound();
-        //    return View("Delete", patient);
-
-        //}
-        //[Authorize]
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> DeleteConfirmed(int id)
-        //{
-        //    var patient = await db.Patients.SingleOrDefaultAsync
-        //        (m => m.PatientId == id);
-        //    db.Patients.Remove(patient);
-        //    await db.SaveChangesAsync();
-        //    return RedirectToAction(nameof(Index));
         //}
         //[Authorize]
         //public async Task<IActionResult> Edit(int? id)

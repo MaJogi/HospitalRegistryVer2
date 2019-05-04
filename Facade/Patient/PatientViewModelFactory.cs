@@ -23,6 +23,7 @@ namespace Open.Facade.Patient
             
             return new PatientViewModel
             {
+                PatientId = o.DbRecord.Id,
                 FirstName = o.DbRecord.FirstName,
                 LastName = o.DbRecord.LastName,
                 IdCode = o.DbRecord.IdCode,

@@ -15,7 +15,7 @@
     <table class="table">
         <thead>
             <tr>
-                @*<th>@Html.DisplayNameFor(model => model.PatientId)</th>*@
+                <th>@Html.DisplayNameFor(model => model.PatientId)</th>
                 <th>@Html.DisplayNameFor(model => model.FirstName)</th>
                 <th>@Html.DisplayNameFor(model => model.LastName)</th>
                 <th>@Html.DisplayNameFor(model => model.IdCode)</th>
@@ -29,7 +29,7 @@
             @foreach (var item in Model)
             {
             <tr>
-                @*<td>@Html.DisplayFor(crapNoTUsed => item.PatientId)</td>*@
+                <td>@Html.DisplayFor(crapNoTUsed => item.PatientId)</td>
                 <td>@Html.DisplayFor(notUsed => item.FirstName)</td>
                 <td>@Html.DisplayFor(notUsed => item.LastName)</td>
                 <td>@Html.DisplayFor(notUsed => item.IdCode)</td>
