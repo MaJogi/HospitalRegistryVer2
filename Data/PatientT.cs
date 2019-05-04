@@ -13,9 +13,6 @@ namespace Open.Data
         //private const string lenghtIsToBig = "Length should be less than 20 characters";
         //private const string wrongLength = "Wrong Length";
 
-        
-
-
 
         [ScaffoldColumn(false)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

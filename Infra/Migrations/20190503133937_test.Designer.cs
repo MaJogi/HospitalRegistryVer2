@@ -5,28 +5,26 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Open.HospitalRegistry.Data;
 using Open.Infra;
 
-namespace Open.HospitalRegistry.Migrations
+namespace Open.Infra.Migrations
 {
     [DbContext(typeof(RegistryDbContext))]
-    [Migration("20190425105532_patient")]
-    partial class patient
+    [Migration("20190503133937_test")]
+    partial class test
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.0.0-preview.19074.3")
+                .HasAnnotation("ProductVersion", "3.0.0-preview4.19216.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Open.HospitalRegistry.Models.Patient", b =>
+            modelBuilder.Entity("Open.Data.Patient.PatientDbRecord", b =>
                 {
-                    b.Property<int>("PatientId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("FirstName");
 
@@ -40,7 +38,7 @@ namespace Open.HospitalRegistry.Migrations
 
                     b.Property<DateTime>("ValidTo");
 
-                    b.HasKey("PatientId");
+                    b.HasKey("Id");
 
                     b.ToTable("Patients");
                 });

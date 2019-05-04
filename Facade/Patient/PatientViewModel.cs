@@ -11,14 +11,20 @@ namespace Open.Facade.Patient
     {
         [DisplayName("ID")]
         public int PatientId { get; set; }
-        public string PatientName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string IdCode { get; set; }
         public string Problem { get; set; }
         public string ProblemColor { get; /*private*/ set; } = "red";
         public DateTime ValidFrom { get; set; }
         public DateTime ValidTo { get; set; }
 
+
+       
         
+        
+       
+
 
     }
 

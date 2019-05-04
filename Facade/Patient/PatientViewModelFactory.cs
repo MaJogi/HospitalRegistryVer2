@@ -23,7 +23,8 @@ namespace Open.Facade.Patient
             
             return new PatientViewModel
             {
-                PatientName = setName(o) /*o.DbRecord.FirstName + " " + o.DbRecord.LastName*/,
+                FirstName = o.DbRecord.FirstName,
+                LastName = o.DbRecord.LastName,
                 IdCode = o.DbRecord.IdCode,
                 Problem = o.DbRecord.Problem,
                 ProblemColor = setProblemColor(o), //I had to comment out private set in PatientViewModel to make it work
@@ -33,17 +34,19 @@ namespace Open.Facade.Patient
             };
         }
 
-        internal static string setName(PatientObject o) //make it internal and fix not working with tests issue
-        {
-           return o.DbRecord.FirstName + " " + o.DbRecord.LastName;
-        }
+        //Todo tõsta loogika dbrecord factorysse
+        //internal static string setName(PatientObject o) //make it internal and fix not working with tests issue
+        //{
+        //   return o.DbRecord.FirstName + " " + o.DbRecord.LastName;
+        //}
 
+        //Todo tõsta dbrecordfactorisse
         internal static string setProblemColor(PatientObject o)
         {
             if (!ReferenceEquals(null, o)) // if patient isn't null
             {
                
-                return o.DbRecord.Problem == "Head" ? "Yellow" : "Magenta";
+                return o.DbRecord.Problem == "Head" ? "Yellow" : "Magenta"; //NB: Teha nii, et problem color
 
             }
             else

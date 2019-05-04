@@ -14,7 +14,7 @@ namespace Open.Data.Patient
         [ScaffoldColumn(false)]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
-        public int PatientId { get; set; }
+        public string Id { get; set; } //Now creates unique hash
         
         //[NameValidation] Add validation as soon as validation class i done!
         public string FirstName { get; set; }

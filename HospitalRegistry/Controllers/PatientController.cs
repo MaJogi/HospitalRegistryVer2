@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using Open.HospitalRegistry.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Open.Data.Patient;
 using Open.Domain.Patient;
 using Open.HospitalRegistry.Data;
 using Open.Infra;
@@ -28,33 +29,33 @@ namespace Open.HospitalRegistry.Controllers
         public async Task<IActionResult> Index()
         {
             var l = await repository.GetObjectsList();
+            //model.FooterData = new FooterViewModel("Tallinn Hospital"); //TODO
             return View(new PatientViewModelsList(l));
         }
-        //private readonly RegistryDbContext db;
-        //public PatientController(RegistryDbContext db) { this.db = db; }
-        //[Authorize]
-        //public IActionResult Index()
-        //{
 
-        //    var model = new PatientListViewModel();
-        //    var patients = Patients.Get(db);
-        //    var list = new List<PatientViewModel>();
-        //    foreach (var p in patients)
-        //    {
-        //        var patient = new PatientViewModel(p);
-        //        patient.PatientId = p.PatientId;
-        //        list.Add(patient);
-        //    }
-        //    model.Patients = list;
-        //    model.FooterData = new FooterViewModel("Tallinn Hospital");
+        [Authorize]
+        [HttpPost]
+        public IActionResult CreatePatient([Bind("PatientId,FirstName,LastName,IdCode,Problem,ValidFrom,ValidTo")]
+            PatientViewModel p)
+        {
+            //if (id != patient.PatientId) return NotFound();
+            if (ModelState.IsValid)
+            { 
+                var o = PatientObjectFactory.Create(p.FirstName, p.LastName, p.IdCode, p.Problem, p.ValidFrom,
+                    p.ValidTo);
+                o.DbRecord.Id = Guid.NewGuid().ToString();
 
-        //    return View("Index", model);
-        //}
-        //[Authorize]
-        //public IActionResult AddNew()
-        //{
-        //    return View("CreatePatient", new CreatePatientViewModel());
-        //}
+                repository.AddObject(o);
+            }
+
+            return RedirectToAction(nameof(Index));
+        }
+        [Authorize]
+        [HttpGet]
+        public IActionResult CreatePatient()
+        {
+            return View(new PatientViewModel());
+        }
         //[Authorize]
         //[ValidateAntiForgeryToken]
         //public IActionResult SavePatient(Patient p, string BtnSubmit)
