@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Open.Core;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -18,9 +19,9 @@ namespace Open.Data.Patient
         
         //[NameValidation] Add validation as soon as validation class i done!
         public string FirstName { get; set; }
-        //[NameValidation]
+        [NameValidation]
         public string LastName { get; set; }
-        //[IdCodeValidation]
+        [IdCodeValidation]
         public string IdCode { get; set; }
         public string Problem { get; set; } // will look like a comment on the site
         public string PhoneNumber { get; set; }

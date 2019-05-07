@@ -1,7 +1,7 @@
 ﻿@model Open.Facade.Patient.PatientViewModel
 @{
     ViewBag.Title = "Create Patient";
-    <script src="~/js/Validations.js"></script>
+    @*<script src="~/js/Validations.js"></script>
     <script>
     function ResetForm() {
         document.getElementById("TxtFName").value = "";
@@ -13,7 +13,7 @@
         document.getElementById("TxtPhoneNumber").value = "";
     }
 
-    </script>
+    </script>*@
 }
 
 <!DOCTYPE html>
@@ -27,15 +27,15 @@
     <form asp-action="CreatePatient" asp-controller="Patient" method="post">
         @Html.AntiForgeryToken()
         <p>
-            First Name: <input type="text" id="TxtFName" name="FirstName" Value="@Model.FirstName" />
+            First Name: <input type="text" id="TxtFName" name="FirstName" Value="" />
             @Html.ValidationMessage("FirstName")
         <p />
         <p>
-            Last Name: <input type="text" id="TxtLName" name="LastName" Value="@Model.LastName" />
+            Last Name: <input type="text" id="TxtLName" name="LastName" Value="" />
             @Html.ValidationMessage("LastName")
         <p />
         <p>
-            IdCode: <input type="text" id="TxtIdCode" name="IdCode" Value="@Model.IdCode" />
+            IdCode: <input type="text" id="TxtIdCode" name="IdCode" Value="" />
             @Html.ValidationMessage("IdCode")
         <p />
         <p>Problem: <input type="text" id="TxtProblem" name="Problem" Value="" />

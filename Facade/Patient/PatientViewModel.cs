@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using Open.Core;
 using Open.Data.Patient;
 using Open.Domain.Patient;
 
@@ -11,6 +12,7 @@ namespace Open.Facade.Patient
     {
         [DisplayName("ID")]
         public string PatientId { get; set; }
+        [NameValidation]
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string IdCode { get; set; }
