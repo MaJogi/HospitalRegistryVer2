@@ -78,7 +78,7 @@ namespace Open.HospitalRegistry.Controllers
             //if (patient == null) return NotFound();
             //return View("Delete", patient);
             var o = await repository.GetObject(id);
-            //return View(new PatientViewModel());
+            //return View(new PatientViewModel()); 
             return View(PatientViewModelFactory.Create(o));
 
         }
