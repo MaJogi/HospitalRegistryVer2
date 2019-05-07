@@ -15,9 +15,12 @@ namespace Open.Facade.Patient
         public string LastName { get; set; }
         public string IdCode { get; set; }
         public string Problem { get; set; }
+        public string PhoneNumber { get; set; }
         public string ProblemColor { get; /*private*/ set; } = "red";
         public DateTime ValidFrom { get; set; }
         public DateTime ValidTo { get; set; }
+      
+
 
 
     }

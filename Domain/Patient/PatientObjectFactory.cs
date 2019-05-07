@@ -7,10 +7,10 @@ namespace Open.Domain.Patient
 {
     public static class PatientObjectFactory
     {
-        public static PatientObject Create(string firstName, string lastName, string idCode, string problem,
+        public static PatientObject Create(string firstName, string lastName, string idCode, string problem, string phoneNumber,
             DateTime? validFrom = null, DateTime? validTo = null)
         {
-            var o = PatientDbRecordFactory.Create(firstName, lastName, idCode, problem, validFrom, validTo);
+            var o = PatientDbRecordFactory.Create(firstName, lastName, idCode, problem, phoneNumber, validFrom, validTo );
             return new PatientObject(o);
         }
     }

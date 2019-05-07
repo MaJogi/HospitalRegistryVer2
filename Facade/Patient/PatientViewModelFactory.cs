@@ -28,9 +28,11 @@ namespace Open.Facade.Patient
                 LastName = o.DbRecord.LastName,
                 IdCode = o.DbRecord.IdCode,
                 Problem = o.DbRecord.Problem,
+                PhoneNumber = o.DbRecord.PhoneNumber,
                 ProblemColor = setProblemColor(o), //I had to comment out private set in PatientViewModel to make it work
                 ValidFrom = o.DbRecord.ValidFrom,
                 ValidTo = o.DbRecord.ValidTo
+                
 
             };
         }

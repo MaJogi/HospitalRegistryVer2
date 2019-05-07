@@ -35,13 +35,13 @@ namespace Open.HospitalRegistry.Controllers
 
         [Authorize]
         [HttpPost]
-        public IActionResult CreatePatient([Bind("PatientId,FirstName,LastName,IdCode,Problem,ValidFrom,ValidTo")]
+        public IActionResult CreatePatient([Bind("PatientId,FirstName,LastName,IdCode,Problem,PhoneNumber,ValidFrom,ValidTo")]
             PatientViewModel p)
         {
             //if (id != patient.PatientId) return NotFound();
             if (ModelState.IsValid)
             { 
-                var o = PatientObjectFactory.Create(p.FirstName, p.LastName, p.IdCode, p.Problem, p.ValidFrom,
+                var o = PatientObjectFactory.Create(p.FirstName, p.LastName, p.IdCode, p.Problem, p.PhoneNumber, p.ValidFrom,
                     p.ValidTo);
                 o.DbRecord.Id = Guid.NewGuid().ToString();
 
@@ -93,7 +93,7 @@ namespace Open.HospitalRegistry.Controllers
         }
 
         [HttpPost] [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit([Bind("PatientId,FirstName,LastName,IdCode,Problem,ValidFrom,ValidTo")] PatientViewModel p)
+        public async Task<IActionResult> Edit([Bind("PatientId,FirstName,LastName,IdCode,Problem,PhoneNumber,ValidFrom,ValidTo")] PatientViewModel p)
         {
             if (!ModelState.IsValid) return View(p);
             var o = await repository.GetObject(p.PatientId);
@@ -101,6 +101,7 @@ namespace Open.HospitalRegistry.Controllers
             o.DbRecord.LastName = p.LastName;
             o.DbRecord.IdCode = p.IdCode;
             o.DbRecord.Problem = p.Problem;
+            o.DbRecord.PhoneNumber = p.PhoneNumber;
             o.DbRecord.ValidFrom = p.ValidFrom;
             o.DbRecord.ValidTo = p.ValidTo;
             repository.UpdateObject(o);

@@ -8,7 +8,7 @@ namespace Open.Data.Patient
     {
         public static PatientDbRecord Create() { return new PatientDbRecord(); } //is it right? Should it be null?
 
-        public static PatientDbRecord Create(string firstName, string lastName, string idCode, string problem,
+        public static PatientDbRecord Create(string firstName, string lastName, string idCode, string problem, string phoneNumber,
             DateTime? validFrom = null, DateTime? validTo = null)
         {
             var o = new PatientDbRecord()
@@ -17,8 +17,10 @@ namespace Open.Data.Patient
                 LastName = lastName ?? string.Empty,
                 IdCode = idCode,
                 Problem = problem,
+                PhoneNumber = phoneNumber ?? string.Empty,
                 ValidFrom = validFrom ?? DateTime.Now, //DateOfPatientCreation //Maybe DateTime.MinValue
                 ValidTo = validTo ?? DateTime.MaxValue //Date when patient is excluded (deleted from system/registry)
+                
             };
             return o;
         }

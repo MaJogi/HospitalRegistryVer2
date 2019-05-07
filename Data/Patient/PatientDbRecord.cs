@@ -23,9 +23,13 @@ namespace Open.Data.Patient
         //[IdCodeValidation]
         public string IdCode { get; set; }
         public string Problem { get; set; } // will look like a comment on the site
+        public string PhoneNumber { get; set; }
         public DateTime ValidFrom { get; set; }
         public DateTime ValidTo { get; set; }
 
+       
+        
+        
         //Todo
         //Add phonenumber
         //Add complex logic to validate idcode and get birthdate and gender from idcode.
