@@ -13,7 +13,7 @@ namespace Open.Core
 
         Task<T> AddObject(T o);
 
-        void UpdateObject(T o);
+        Task UpdateObject(T o);
 
         Task DeleteObject(T o);
     }

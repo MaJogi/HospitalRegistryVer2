@@ -92,6 +92,21 @@ namespace Open.HospitalRegistry.Controllers
             return View(PatientViewModelFactory.Create(o));
         }
 
+        [HttpPost] [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit([Bind("PatientId,FirstName,LastName,IdCode,Problem,ValidFrom,ValidTo")] PatientViewModel p)
+        {
+            if (!ModelState.IsValid) return View(p);
+            var o = await repository.GetObject(p.PatientId);
+            o.DbRecord.FirstName = p.FirstName;
+            o.DbRecord.LastName = p.LastName;
+            o.DbRecord.IdCode = p.IdCode;
+            o.DbRecord.Problem = p.Problem;
+            o.DbRecord.ValidFrom = p.ValidFrom;
+            o.DbRecord.ValidTo = p.ValidTo;
+            repository.UpdateObject(o);
+            return RedirectToAction("Index");
+        }
+
         //[Authorize]
         //[ValidateAntiForgeryToken]
         //public IActionResult SavePatient(Patient p, string BtnSubmit)

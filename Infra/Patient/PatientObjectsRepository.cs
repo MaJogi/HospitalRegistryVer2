@@ -35,7 +35,7 @@ namespace Open.Infra.Patient
             return o;
         }
 
-        public async void UpdateObject(PatientObject o)
+        public async Task UpdateObject(PatientObject o)
         {
             db.Patients.Update(o.DbRecord);
             await db.SaveChangesAsync();
