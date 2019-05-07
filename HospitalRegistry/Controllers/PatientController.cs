@@ -80,7 +80,14 @@ namespace Open.HospitalRegistry.Controllers
             return View(new PatientViewModel());
 
         }
-       
+        public async Task<IActionResult> Edit(int? id)
+        {
+            //if (id == null) return NotFound();
+            //var patient = await db.Patients.SingleOrDefaultAsync
+            //    (m => m.PatientId == id);
+            //if (patient == null) return NotFound();
+            return View(new PatientViewModel());
+        }
 
         //[Authorize]
         //[ValidateAntiForgeryToken]

@@ -29,7 +29,7 @@
             @foreach (var item in Model)
             {
             <tr>
-                <td>@Html.DisplayFor(crapNoTUsed => item.PatientId)</td>
+                <td>@Html.DisplayFor(notUsed => item.PatientId)</td>
                 <td>@Html.DisplayFor(notUsed => item.FirstName)</td>
                 <td>@Html.DisplayFor(notUsed => item.LastName)</td>
                 <td>@Html.DisplayFor(notUsed => item.IdCode)</td>
@@ -37,7 +37,7 @@
                 <td>@Html.DisplayFor(notUsed => item.ValidFrom)</td>
                 <td>@Html.DisplayFor(notUsed => item.ValidTo)</td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.PatientId">Edit</a> | @*Todo edit & delete page*@
+                    <a asp-action="Edit" asp-route-id="@item.PatientId">Edit</a> | 
                     <a asp-action="Delete" asp-route-id="@item.PatientId">Delete</a>
                 </td>
             </tr>
