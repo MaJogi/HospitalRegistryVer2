@@ -82,13 +82,14 @@ namespace Open.HospitalRegistry.Controllers
             return View(PatientViewModelFactory.Create(o));
 
         }
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(string? id)
         {
             //if (id == null) return NotFound();
             //var patient = await db.Patients.SingleOrDefaultAsync
             //    (m => m.PatientId == id);
             //if (patient == null) return NotFound();
-            return View(new PatientViewModel());
+            var o = await repository.GetObject(id);
+            return View(PatientViewModelFactory.Create(o));
         }
 
         //[Authorize]
