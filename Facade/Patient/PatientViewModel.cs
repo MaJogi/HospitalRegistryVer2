@@ -20,12 +20,6 @@ namespace Open.Facade.Patient
         public DateTime ValidTo { get; set; }
 
 
-       
-        
-        
-       
-
-
     }
 
 }
