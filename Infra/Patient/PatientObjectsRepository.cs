@@ -41,7 +41,7 @@ namespace Open.Infra.Patient
             await db.SaveChangesAsync();
         }
 
-        public async void DeleteObject (PatientObject o)
+        public async Task DeleteObject (PatientObject o)
         {
             db.Patients.Remove(o.DbRecord);
             await db.SaveChangesAsync();

@@ -15,7 +15,7 @@ namespace Open.Core
 
         void UpdateObject(T o);
 
-        void DeleteObject(T o);
+        Task DeleteObject(T o);
     }
 
 }
