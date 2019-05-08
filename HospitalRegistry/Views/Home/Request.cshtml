@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewData["Title"] = "Request";
+}
+
+    <script>
+        function ResetForm() {
+            document.getElementById("TxtFName").value = "";
+            document.getElementById("TxtLName").value = "";
+            document.getElementById("TxtIdCode").value = "";
+            document.getElementById("TxtProblem").value = "";
+            document.getElementById("TxtValidFrom").value = 0;
+            document.getElementById("TxtValidTo").value = 0;
+            document.getElementById("TxtPhoneNumber").value = "";
+        }
+    </script>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Send Request</title>
+</head>
+<body>
+    <div>
+        <form asp-action="CreateRequest" asp-controller="Home" method="post">
+            @Html.AntiForgeryToken()
+            <p>
+                First Name: <input type="text" id="TxtFName" name="FirstName" Value="" />
+                <font color="red"> @Html.ValidationMessage("FirstName")</font>
+            <p />
+            <p>
+                Last Name: <input type="text" id="TxtLName" name="LastName" Value="" />
+                <font color="red"> @Html.ValidationMessage("LastName")</font>
+            <p />
+            <p>
+                IdCode: <input type="text" id="TxtIdCode" name="IdCode" Value="" />
+                <font color="red">@Html.ValidationMessage("IdCode")</font>
+            <p />
+            <p>
+                Problem: <input type="text" id="TxtProblem" name="Problem" Value="" />
+                <font color="red">@Html.ValidationMessage("Problem")</font>
+            <p />
+            <p>
+                Phone Number: <input type="text" id="TxtPhoneNumber" name="PhoneNumber" Value="" />
+                <font color="red">@Html.ValidationMessage("PhoneNumber")</font>
+            <p />
+
+            <input type="submit" name="BtnSubmit" value="Save Patient" onclick=""
+            <input type="button" name="BtnReset" value="Reset" onclick="ResetForm();"
+            <input type="submit" name="BtnSubmit" value="Cancel" />
+        </form>
+    </div>
+</body>
+</html>
+
