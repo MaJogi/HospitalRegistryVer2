@@ -47,6 +47,10 @@ namespace Open.HospitalRegistry.Controllers
 
                 repository.AddObject(o);
             }
+            else
+            {
+                return View("CreatePatient");
+            }
 
             return RedirectToAction(nameof(Index));
         }

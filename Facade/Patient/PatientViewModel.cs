@@ -14,7 +14,9 @@ namespace Open.Facade.Patient
         public string PatientId { get; set; }
         [NameValidation]
         public string FirstName { get; set; }
+        [NameValidation]
         public string LastName { get; set; }
+        [IdCodeValidation]
         public string IdCode { get; set; }
         public string Problem { get; set; }
         public string PhoneNumber { get; set; }

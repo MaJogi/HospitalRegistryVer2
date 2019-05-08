@@ -13,15 +13,12 @@ namespace Open.Data.Patient
         // from users via requests that they sent via online form
 
         [ScaffoldColumn(false)]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public string Id { get; set; } //Now creates unique hash
-        
-        //[NameValidation] Add validation as soon as validation class i done!
+
         public string FirstName { get; set; }
-        [NameValidation]
         public string LastName { get; set; }
-        [IdCodeValidation]
         public string IdCode { get; set; }
         public string Problem { get; set; } // will look like a comment on the site
         public string PhoneNumber { get; set; }
