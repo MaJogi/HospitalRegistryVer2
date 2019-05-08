@@ -10,7 +10,7 @@ namespace Open.Core
     public class NumberPhoneValidation : ValidationAttribute
     {
        
-        protected const string requiredField = "Required field";
+        protected const string requiredField = "Required field!";
         protected const string wrongLength = "Wrong length! Standart Number lenght 7 or 8";
         protected const string useOnlyNumbers = "Use only numbers";
 
@@ -18,7 +18,7 @@ namespace Open.Core
         {
             if (value == null) return error(requiredField);
             var s = value.ToString();
-            if (s.Trim().Length != 7 || s.Trim().Length != 8) return error(wrongLength);
+            if (s.Trim().Length !<5 || s.Trim().Length !> 10) return error(wrongLength);
             if (!onlyNumbers(s)) return error(useOnlyNumbers);
             return ValidationResult.Success;
         }

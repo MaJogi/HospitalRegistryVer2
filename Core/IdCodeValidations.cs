@@ -9,7 +9,7 @@ namespace Open.Core
 {
     public class IdCodeValidation : ValidationAttribute
     {
-        protected const string requiredField = "Required field";
+        protected const string requiredField = "Required field!";
         protected const string wrongLength = "Wrong length! ID Code lenght is 11 numbers";
         protected const string useOnlyNumbers = "Use only numbers";
 

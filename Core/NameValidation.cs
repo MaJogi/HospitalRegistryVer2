@@ -13,6 +13,8 @@ namespace Open.Core
         protected const string lengthIsToBig = "Length should be less than 20 characters!";
         protected const string useOnlyLetters = "Use only letters!";
 
+   
+
 
 
 

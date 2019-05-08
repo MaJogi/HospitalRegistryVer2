@@ -28,22 +28,22 @@
         @Html.AntiForgeryToken()
         <p>
             First Name: <input type="text" id="TxtFName" name="FirstName" Value="" />
-            @Html.ValidationMessage("FirstName")
-        <p />
+                        <font color="red"> @Html.ValidationMessage("FirstName")</font>
+<p />
         <p>
             Last Name: <input type="text" id="TxtLName" name="LastName" Value="" />
-            @Html.ValidationMessage("LastName")
-        <p />
+                       <font color="red"> @Html.ValidationMessage("LastName")</font>
+<p />
         <p>
             IdCode: <input type="text" id="TxtIdCode" name="IdCode" Value="" />
-            @Html.ValidationMessage("IdCode")
-        <p />
+                    <font color="red">@Html.ValidationMessage("IdCode")</font>
+<p />
         <p>Problem: <input type="text" id="TxtProblem" name="Problem" Value="" />
-            @Html.ValidationMessage("Problem")
-        <p />
+                    <font color="red">@Html.ValidationMessage("Problem")</font>
+<p />
         <p>
             Phone Number: <input type="text" id="TxtPhoneNumber" name="PhoneNumber" Value="" />
-            @Html.ValidationMessage("PhoneNumber")
+                          <font color="red">@Html.ValidationMessage("PhoneNumber")</font>
 <p />
         <p>Valid From: <input type="date" id="TxtValidFrom" name="ValidFrom" Value="" />
         <p />
