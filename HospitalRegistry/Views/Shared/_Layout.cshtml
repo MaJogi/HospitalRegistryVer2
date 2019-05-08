@@ -40,13 +40,22 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Patient" asp-action="Index">Patient</a>
+                        <li>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Patient" asp-action="Index">Patient</a>
+                            }
                         </li>
                         <li>
                             @if (User.Identity.IsAuthenticated)
                             {
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Patient" asp-action="CreatePatient">YuArAdmin</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Patient" asp-action="CreatePatient">Create patient</a>
+                            }
+                        </li>
+                        <li>
+                            @if (!User.Identity.IsAuthenticated)
+                            {
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Sent Request</a>
                             }
                         </li>
 
