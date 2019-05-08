@@ -7,21 +7,16 @@ using System.Threading.Tasks;
 
 namespace Open.Core
 {
-    public class NameValidation : ValidationAttribute
+    public class ProblemValidation : ValidationAttribute
     {
         protected const string requiredField = "Required field!";
-        protected const string lengthIsToBig = "Length should be less than 20 characters!";
-        protected const string useOnlyLetters = "Use only letters!";
-
-
-
+        protected const string lengthIsToBig = "Length should be less than 100 characters!";
 
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             if (value == null) return error(requiredField);
             var s = value.ToString();
-            if (s.Length > 20) return error(lengthIsToBig);
-            if (!onlyLetters(s)) return error(useOnlyLetters);
+            if (s.Length > 100) return error(lengthIsToBig);
             return ValidationResult.Success;
         }
 

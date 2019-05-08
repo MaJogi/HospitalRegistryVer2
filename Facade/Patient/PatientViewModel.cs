@@ -18,7 +18,9 @@ namespace Open.Facade.Patient
         public string LastName { get; set; }
         [IdCodeValidation]
         public string IdCode { get; set; }
+        [ProblemValidation]
         public string Problem { get; set; }
+        [NumberPhoneValidation]
         public string PhoneNumber { get; set; }
         public string ProblemColor { get; /*private*/ set; } = "red";
         public DateTime ValidFrom { get; set; }

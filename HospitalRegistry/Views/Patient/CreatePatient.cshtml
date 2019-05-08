@@ -39,9 +39,12 @@
             @Html.ValidationMessage("IdCode")
         <p />
         <p>Problem: <input type="text" id="TxtProblem" name="Problem" Value="" />
+            @Html.ValidationMessage("Problem")
         <p />
-        <p>Phone Number: <input type="text" id="TxtPhoneNumber" name="PhoneNumber" Value="" />
-        <p />
+        <p>
+            Phone Number: <input type="text" id="TxtPhoneNumber" name="PhoneNumber" Value="" />
+            @Html.ValidationMessage("PhoneNumber")
+<p />
         <p>Valid From: <input type="date" id="TxtValidFrom" name="ValidFrom" Value="" />
         <p />
         <p>Valid To: <input type="date" id="TxtValidTo" name="ValidTo" Value="" /><p />

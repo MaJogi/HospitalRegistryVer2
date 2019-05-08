@@ -9,11 +9,8 @@ namespace Open.Core
 {
     public class IdCodeValidation : ValidationAttribute
     {
-        //Todo
-        //Add complex logic to validate idcode and get birthdate and gender from idcode.
-
         protected const string requiredField = "Required field";
-        protected const string wrongLength = "Wrong length";
+        protected const string wrongLength = "Wrong length! ID Code lenght is 11 numbers";
         protected const string useOnlyNumbers = "Use only numbers";
 
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
