@@ -75,7 +75,7 @@ namespace Open.HospitalRegistry.Controllers
         }
 
         [Authorize]
-        public async Task<IActionResult> Delete(string? id)
+        public async Task<IActionResult> Delete(string id)
         {
             //if (id == null) return NotFound();
             //Patient patient = db.Patients.Find(id);
@@ -86,7 +86,7 @@ namespace Open.HospitalRegistry.Controllers
             return View(PatientViewModelFactory.Create(o));
 
         }
-        public async Task<IActionResult> Edit(string? id)
+        public async Task<IActionResult> Edit(string id)
         {
             //if (id == null) return NotFound();
             //var patient = await db.Patients.SingleOrDefaultAsync
