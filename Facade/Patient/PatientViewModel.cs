@@ -25,7 +25,7 @@ namespace Open.Facade.Patient
         public string ProblemColor { get; /*private*/ set; } = "red";
         public DateTime ValidFrom { get; set; }
         public DateTime ValidTo { get; set; }
-      
+
 
 
 

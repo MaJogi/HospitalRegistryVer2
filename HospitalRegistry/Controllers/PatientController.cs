@@ -35,7 +35,7 @@ namespace Open.HospitalRegistry.Controllers
 
         [Authorize]
         [HttpPost]
-        public IActionResult CreatePatient([Bind("PatientId,FirstName,LastName,IdCode,Problem,PhoneNumber,ValidFrom,ValidTo")]
+        public async Task<IActionResult>/*IActionResult*/ CreatePatient(/*[Bind("PatientId,FirstName,LastName,IdCode,Problem,PhoneNumber,ValidFrom,ValidTo")]*/
             PatientViewModel p)
         {
             //if (id != patient.PatientId) return NotFound();
@@ -45,7 +45,7 @@ namespace Open.HospitalRegistry.Controllers
                     p.ValidTo);
                 o.DbRecord.Id = Guid.NewGuid().ToString();
 
-                repository.AddObject(o);
+                await repository.AddObject(o);
             }
             else
             {
@@ -69,7 +69,7 @@ namespace Open.HospitalRegistry.Controllers
 
             var o = await repository.GetObject(id);
 
-            repository.DeleteObject(o);
+            await repository.DeleteObject(o);
 
             return RedirectToAction(nameof(Index));
         }
@@ -92,6 +92,7 @@ namespace Open.HospitalRegistry.Controllers
             //var patient = await db.Patients.SingleOrDefaultAsync
             //    (m => m.PatientId == id);
             //if (patient == null) return NotFound();
+
             var o = await repository.GetObject(id);
             return View(PatientViewModelFactory.Create(o));
         }
@@ -106,9 +107,9 @@ namespace Open.HospitalRegistry.Controllers
             o.DbRecord.IdCode = p.IdCode;
             o.DbRecord.Problem = p.Problem;
             o.DbRecord.PhoneNumber = p.PhoneNumber;
-            o.DbRecord.ValidFrom = p.ValidFrom;
-            o.DbRecord.ValidTo = p.ValidTo;
-            repository.UpdateObject(o);
+            o.DbRecord.ValidFrom = p.ValidFrom /*?? DateTime.MinValue*/;
+            o.DbRecord.ValidTo = p.ValidTo /*?? DateTime.MaxValue*/;
+            await repository.UpdateObject(o);
             return RedirectToAction("Index");
         }
 
