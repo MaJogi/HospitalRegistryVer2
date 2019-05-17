@@ -40,7 +40,8 @@ namespace Open.HospitalRegistry.Controllers
         {
             //if (id != patient.PatientId) return NotFound();
             if (ModelState.IsValid)
-            { 
+            {
+                
                 var o = PatientObjectFactory.Create(p.FirstName, p.LastName, p.IdCode, p.Problem, p.PhoneNumber, p.ValidFrom,
                     p.ValidTo);
                 o.DbRecord.Id = Guid.NewGuid().ToString();

@@ -3,21 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.156
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalRegistry", "HospitalRegistry\HospitalRegistry.csproj", "{CA5DEE70-7C84-4647-8BC6-7983EB2383BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HospitalRegistry", "HospitalRegistry\HospitalRegistry.csproj", "{CA5DEE70-7C84-4647-8BC6-7983EB2383BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra", "Infra\Infra.csproj", "{E4426B91-6977-4E46-A020-88D7B84440D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infra", "Infra\Infra.csproj", "{E4426B91-6977-4E46-A020-88D7B84440D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{F3BF8EEF-2FC1-484C-ADA5-36A28D01CE9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{F3BF8EEF-2FC1-484C-ADA5-36A28D01CE9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aids", "Aids\Aids.csproj", "{CD3BA644-5CD9-4923-A5B1-6ECB861BE3B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aids", "Aids\Aids.csproj", "{CD3BA644-5CD9-4923-A5B1-6ECB861BE3B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{ACFD6079-AFB4-414C-B0A0-E850A6A47D7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{ACFD6079-AFB4-414C-B0A0-E850A6A47D7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facade", "Facade\Facade.csproj", "{4F922B5B-4E12-47EC-B9E2-57105B407609}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Facade", "Facade\Facade.csproj", "{4F922B5B-4E12-47EC-B9E2-57105B407609}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{304A8EF1-7445-4151-B4D8-F2F6E85DD6E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{304A8EF1-7445-4151-B4D8-F2F6E85DD6E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{A9E52605-32F9-4EB8-94DF-04E20382FAC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{A9E52605-32F9-4EB8-94DF-04E20382FAC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Documentation", "Documentation\Documentation.csproj", "{A52B1155-C1FE-4E24-B0FD-6EEF1EB09EE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{A9E52605-32F9-4EB8-94DF-04E20382FAC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9E52605-32F9-4EB8-94DF-04E20382FAC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9E52605-32F9-4EB8-94DF-04E20382FAC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A52B1155-C1FE-4E24-B0FD-6EEF1EB09EE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A52B1155-C1FE-4E24-B0FD-6EEF1EB09EE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A52B1155-C1FE-4E24-B0FD-6EEF1EB09EE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A52B1155-C1FE-4E24-B0FD-6EEF1EB09EE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

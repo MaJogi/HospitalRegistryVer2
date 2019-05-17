@@ -1,6 +1,8 @@
 ﻿@model Open.Facade.Patient.PatientViewModel
 @{
     ViewBag.Title = "Create Patient";
+    var dateNow = DateTime.Now.ToString("yyyy-MM-dd");
+    var dateExpired = DateTime.Now.AddYears(5).ToString("yyyy-MM-dd");
 
     <script>
     function ResetForm() {
@@ -27,27 +29,27 @@
     <form asp-action="CreatePatient" asp-controller="Patient" method="post">
         @Html.AntiForgeryToken()
         <p>
-            First Name: <input type="text" id="TxtFName" name="FirstName" Value="" />
+            First Name: <input type="text" id="TxtFName" name="FirstName" Value="@Model.FirstName" />
                         <font color="red"> @Html.ValidationMessage("FirstName")</font>
 <p />
         <p>
-            Last Name: <input type="text" id="TxtLName" name="LastName" Value="" />
+            Last Name: <input type="text" id="TxtLName" name="LastName" Value="@Model.LastName" />
                        <font color="red"> @Html.ValidationMessage("LastName")</font>
 <p />
         <p>
-            IdCode: <input type="text" id="TxtIdCode" name="IdCode" Value="" />
+            IdCode: <input type="text" id="TxtIdCode" name="IdCode" Value="@Model.IdCode" />
                     <font color="red">@Html.ValidationMessage("IdCode")</font>
 <p />
-        <p>Problem: <input type="text" id="TxtProblem" name="Problem" Value="" />
+        <p>Problem: <input type="text" id="TxtProblem" name="Problem" Value="@Model.Problem" />
                     <font color="red">@Html.ValidationMessage("Problem")</font>
 <p />
         <p>
-            Phone Number: <input type="text" id="TxtPhoneNumber" name="PhoneNumber" Value="" />
+            Phone Number: <input type="text" id="TxtPhoneNumber" name="PhoneNumber" Value="@Model.PhoneNumber" />
                           <font color="red">@Html.ValidationMessage("PhoneNumber")</font>
 <p />
-        <p>Valid From: <input type="date" id="TxtValidFrom" name="ValidFrom" Value="" />
+        <p>Valid From: <input type="date" id="TxtValidFrom" name="ValidFrom" Value="@dateNow" />
         <p />
-        <p>Valid To: <input type="date" id="TxtValidTo" name="ValidTo" Value="" /><p />
+        <p>Valid To: <input type="date" id="TxtValidTo" name="ValidTo" Value="@dateExpired" /><p />
 
         <input type="submit" name="BtnSubmit" value="Save Patient" onclick="return IsValid();"
         <input type="button" name="BtnReset" value="Reset" onclick="ResetForm();"
