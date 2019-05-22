@@ -39,6 +39,7 @@ namespace Open.HospitalRegistry.Controllers
             PatientViewModel p)
         {
             //if (id != patient.PatientId) return NotFound();
+            
             if (ModelState.IsValid)
             {
                 

@@ -46,9 +46,12 @@
                 <font color="red">@Html.ValidationMessage("PhoneNumber")</font>
             <p />
 
-            <input type="submit" name="BtnSubmit" value="Send Request" onclick="" />
-            <input type="button" name="BtnReset" value="Reset" onclick="ResetForm();"/>
-            <input type="submit" name="BtnSubmit" value="Cancel" />
+            @*<input type="submit" name="BtnSubmit" value="Send Request" onclick="" />*@
+
+            <input asp-action="RequestSended" type="submit" name="BtnSubmit" value="Send Request" />
+            <input type="button" name="BtnReset" value="Reset" onclick="ResetForm();" />
+            <input asp-action="Index" type="submit" name="BtnSubmit" value="Cancel" />
+
         </form>
     </div>
 </body>
