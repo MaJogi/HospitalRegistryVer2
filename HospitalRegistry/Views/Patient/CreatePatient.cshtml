@@ -29,27 +29,27 @@
     <form asp-action="CreatePatient" asp-controller="Patient" method="post">
         @Html.AntiForgeryToken()
         <p>
-            First Name: <input type="text" id="TxtFName" name="FirstName" Value="@Model.FirstName" />
+            First Name: <input type="text" id="TxtFName" name="FirstName" Value="" />
                         <font color="red"> @Html.ValidationMessage("FirstName")</font>
 <p />
         <p>
-            Last Name: <input type="text" id="TxtLName" name="LastName" Value="@Model.LastName" />
+            Last Name: <input type="text" id="TxtLName" name="LastName" Value="" />
                        <font color="red"> @Html.ValidationMessage("LastName")</font>
 <p />
         <p>
-            IdCode: <input type="text" id="TxtIdCode" name="IdCode" Value="@Model.IdCode" />
+            IdCode: <input type="text" id="TxtIdCode" name="IdCode" Value="" />
                     <font color="red">@Html.ValidationMessage("IdCode")</font>
 <p />
-        <p>Problem: <input type="text" id="TxtProblem" name="Problem" Value="@Model.Problem" />
+        <p>Problem: <input type="text" id="TxtProblem" name="Problem" Value="" />
                     <font color="red">@Html.ValidationMessage("Problem")</font>
 <p />
         <p>
-            Phone Number: <input type="text" id="TxtPhoneNumber" name="PhoneNumber" Value="@Model.PhoneNumber" />
+            Phone Number: <input type="text" id="TxtPhoneNumber" name="PhoneNumber" Value="" />
                           <font color="red">@Html.ValidationMessage("PhoneNumber")</font>
 <p />
-        <p>Valid From: <input type="date" id="TxtValidFrom" name="ValidFrom" Value="@dateNow" />
+        <p>Valid From: <input type="date" id="TxtValidFrom" name="ValidFrom" Value="" />
         <p />
-        <p>Valid To: <input type="date" id="TxtValidTo" name="ValidTo" Value="@dateExpired" /><p />
+        <p>Valid To: <input type="date" id="TxtValidTo" name="ValidTo" Value="" /><p />
 
         <input type="submit" name="BtnSubmit" value="Save Patient" onclick="return IsValid();"
         <input type="button" name="BtnReset" value="Reset" onclick="ResetForm();"
