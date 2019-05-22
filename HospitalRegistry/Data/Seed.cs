@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Open.HospitalRegistry.Models;
+using Open.Facade;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

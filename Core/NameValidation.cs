@@ -13,11 +13,6 @@ namespace Open.Core
         protected const string lengthIsToBig = "Length should be less than 20 characters!";
         protected const string useOnlyLetters = "Use only letters!";
 
-   
-
-
-
-
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             if (value == null) return error(requiredField);

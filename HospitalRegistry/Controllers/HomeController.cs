@@ -4,7 +4,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Open.HospitalRegistry.Models;
+using Open.Facade;
+
 
 namespace Open.HospitalRegistry.Controllers
 {
@@ -25,5 +26,13 @@ namespace Open.HospitalRegistry.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public IActionResult PatientRequest()
+        {
+            return View("Request");
+        }
+
+
+
     }
 }

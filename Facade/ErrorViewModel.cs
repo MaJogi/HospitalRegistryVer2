@@ -1,6 +1,6 @@
 using System;
 
-namespace Open.HospitalRegistry.Models
+namespace Open.Facade
 {
     public class ErrorViewModel
     {
