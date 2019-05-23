@@ -21,13 +21,14 @@
     <meta name="viewport" content="width=device-width" />
     <title>Send Request</title>
 </head>
+
 <body>
     <div>
         <h3>You are currently sending request to hospital</h3>
-        <h4>Fill the blanks and press sent request</h4>
+        <h6>Fill the blanks and press sent request</h6>
     </div>
-<div>
-    <form asp-action="CreateRequest" asp-controller="Home" method="post">
+    <div>
+        <form asp-action="CreateRequest" asp-controller="Home" method="post">
         @Html.AntiForgeryToken()
         <p>
         First Name: <input type="text" id="TxtFName" name="FirstName" Value=""/>
@@ -48,16 +49,12 @@
         <p>
         Phone Number: <input type="text" id="TxtPhoneNumber" name="PhoneNumber" Value=""/>
         <font color="red">@Html.ValidationMessage("PhoneNumber")</font>
-           />
-
-            @*<input type="submit" name="BtnSubmit" value="Send Request"         >*@
-
-            <input asp-action="RequestSended" type="submit" name="BtnSubmit" vlue=        t" />
-            <input type="button" name="BtnReset" value="Reset" oncick=        ;" />
-            <input asp-action="Index" type="submit" name="BtnSubit"         l"/>
-
-    </form>
-</div>
+        <p />
+            <input asp-action="RequestSended" type="submit" name="BtnSubmit" value= "Send Request" />
+            <input type="button" name="BtnReset" value="Reset" onclick="ResetForm();" />
+            <input asp-action="Index" type="submit" name="BtnSubmit" value="Cancel" />
+        </form>
+    </div>
 </body>
 </html>
 
