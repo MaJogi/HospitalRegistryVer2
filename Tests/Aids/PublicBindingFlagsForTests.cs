@@ -8,7 +8,7 @@ using Open.Aids;
 namespace Open.Tests.Aids
 {
     [TestClass]
-    public class PublicBindingFlagsForTests
+    public class PublicBindingFlagsForTests : BaseTests
     {
         private const BindingFlags p = BindingFlags.Public;
         private const BindingFlags i = BindingFlags.Instance;

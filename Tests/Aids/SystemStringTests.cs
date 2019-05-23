@@ -6,7 +6,7 @@ using Open.Aids;
 
 namespace Open.Tests.Aids
 {
-    [TestClass]  public class SystemStringTests
+    [TestClass]  public class SystemStringTests: BaseTests
     {
         [TestMethod]
         public void StartsWithLetterTest()
