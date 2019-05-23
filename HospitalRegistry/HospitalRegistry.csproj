@@ -5,6 +5,7 @@
     <UserSecretsId>aspnet-HospitalRegistry-896A474B-85BB-45DB-859C-EBF4DC18E20B</UserSecretsId>
     <AssemblyName>Open.HospitalRegistry</AssemblyName>
     <RootNamespace>Open.HospitalRegistry</RootNamespace>
+    <DebugType>Full</DebugType>
   </PropertyGroup>
 
 

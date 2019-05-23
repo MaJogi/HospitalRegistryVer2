@@ -4,6 +4,7 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <AssemblyName>Open.Core</AssemblyName>
     <RootNamespace>Open.Core</RootNamespace>
+	<DebugType>Full</DebugType>
   </PropertyGroup>
 
   <ItemGroup>
