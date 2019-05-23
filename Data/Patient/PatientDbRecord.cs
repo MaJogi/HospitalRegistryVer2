@@ -13,7 +13,6 @@ namespace Open.Data.Patient
         // from users via requests that they sent via online form
 
         [ScaffoldColumn(false)]
-        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public string Id { get; set; } //Now creates unique hash
 

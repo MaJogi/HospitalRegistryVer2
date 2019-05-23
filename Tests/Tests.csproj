@@ -26,4 +26,13 @@
     <ProjectReference Include="..\Infra\Infra.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Core\" />
+    <Folder Include="Data\" />
+    <Folder Include="Domain\" />
+    <Folder Include="Facade\" />
+    <Folder Include="Infra\" />
+    <Folder Include="HospitalRegistry\" />
+  </ItemGroup>
+
 </Project>

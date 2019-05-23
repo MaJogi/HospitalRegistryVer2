@@ -8,19 +8,8 @@ namespace Open.Facade.Patient
 {
     public class PatientViewModelFactory
     {
-        //public PatientViewModel(PatientObject patient)
-        //{
-        //    if (patient is null) return;
-        //    setName(patient);
-        //    setProblem(patient);
-        //    setProblemColor(patient);
-        //    setIdCode(patient);
-        //    setValidFrom(patient);
-        //    setValidTo(patient);
-        //}
         public static PatientViewModel Create(PatientObject o)
         {
-            
             return new PatientViewModel
             {
                 PatientId = o.DbRecord.Id,
@@ -29,7 +18,7 @@ namespace Open.Facade.Patient
                 IdCode = o.DbRecord.IdCode,
                 Problem = o.DbRecord.Problem,
                 PhoneNumber = o.DbRecord.PhoneNumber,
-                ProblemColor = setProblemColor(o), //I had to comment out private set in PatientViewModel to make it work
+                ProblemColor = setProblemColor(o), //was previously private set, but it didn't work with it
                 ValidFrom = o.DbRecord.ValidFrom,
                 ValidTo = o.DbRecord.ValidTo
                 
@@ -49,7 +38,7 @@ namespace Open.Facade.Patient
             if (!ReferenceEquals(null, o)) // if patient isn't null
             {
                
-                return o.DbRecord.Problem == "Head" ? "Yellow" : "Magenta"; //NB: Teha nii, et problem color
+                return o.DbRecord.Problem == "Head" ? "Yellow" : "Magenta"; 
 
             }
             else
