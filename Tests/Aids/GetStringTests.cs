@@ -9,6 +9,12 @@ namespace Open.Tests.Aids
     [TestClass]
     public class GetStringTests : BaseTests
     {
+        [TestInitialize]
+        public override void TestInitialize()
+        {
+            base.TestInitialize();
+            type = typeof(GetString);
+        }
         [TestMethod]
         public void HeadTest()
         {

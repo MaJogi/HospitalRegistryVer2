@@ -8,6 +8,12 @@ namespace Open.Tests.Aids
 {
     [TestClass]  public class SystemStringTests: BaseTests
     {
+        [TestInitialize]
+        public override void TestInitialize()
+        {
+            base.TestInitialize();
+            type = typeof(GetClass);
+        }
         [TestMethod]
         public void StartsWithLetterTest()
         {

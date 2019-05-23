@@ -6,13 +6,13 @@ using Open.HospitalRegistry.Controllers;
 
 namespace Open.Tests.HospitalRegistry.Controllers
 {
-    [TestClass]
-    public class PatientsControllerTests
-    {
-        [TestMethod]
-        public void CanCreateTest()
-        {
-            Assert.IsNotNull(new PatientController(null));
-        }
-    }
+    //[TestClass]
+    //public class PatientsControllerTests
+    //{
+    //    [TestMethod]
+    //    public void CanCreateTest()
+    //    {
+    //        Assert.IsNotNull(new PatientController(null));
+    //    }
+    //}
 }
