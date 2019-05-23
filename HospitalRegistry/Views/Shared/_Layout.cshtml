@@ -40,7 +40,7 @@
                         <li>
                             @if (User.Identity.IsAuthenticated)
                             {
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Patient" asp-action="Index">Patient</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Patient" asp-action="Index">Patients</a>
                             }
                         </li>
                         <li>
@@ -52,7 +52,7 @@
                         <li>
                             @if (!User.Identity.IsAuthenticated)
                             {
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="PatientRequest">Sent Request</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="PatientRequest">Send Request</a>
                             }
                         </li>
 
