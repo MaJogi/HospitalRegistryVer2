@@ -11,8 +11,17 @@ namespace Open.Domain.Patient
             string idCode, string problem, string phoneNumber,
             DateTime? validFrom = null, DateTime? validTo = null)
         {
-            var o = PatientDbRecordFactory.Create(firstName, lastName, idCode, 
-                problem, phoneNumber, validFrom, validTo );
+            var o = new PatientDbRecord()
+            {
+                FirstName = firstName ?? string.Empty,
+                LastName = lastName ?? string.Empty,
+                IdCode = idCode,
+                Problem = problem,
+                PhoneNumber = phoneNumber ?? string.Empty,
+                ValidFrom = validFrom ?? DateTime.Now, //DateOfPatientCreation //Maybe DateTime.MinValue
+                ValidTo = validTo ?? DateTime.MaxValue //Date when patient is excluded (deleted from system/registry)
+
+            };
             return new PatientObject(o);
         }
     }

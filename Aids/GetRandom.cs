@@ -45,15 +45,15 @@ namespace Open.Aids {
             return min - d * min + d * max;
         }
 
-        public static T Enum<T>() {
-            return (T) Enum(typeof(T));
-        }
+        //public static T Enum<T>() {
+        //    return (T) Enum(typeof(T));
+        //}
 
-        private static object Enum(Type t) {
-            var count = GetEnum.Count(t);
-            var index = Int32(0, count);
-            return GetEnum.Value(t, index);
-        }
+        //private static object Enum(Type t) {
+        //    var count = GetEnum.Count(t);
+        //    var index = Int32(0, count);
+        //    return GetEnum.Value(t, index);
+        //}
 
         public static float Float(float min = float.MinValue, float max = float.MaxValue) {
             return Convert.ToSingle(Double(min, max));
@@ -114,7 +114,7 @@ namespace Open.Aids {
             var x = Nullable.GetUnderlyingType(t);
             if (!(x is null)) t = x;
             if (t.IsArray) return Array(t.GetElementType());
-            if (t.IsEnum) return Enum(t);
+            //if (t.IsEnum) return Enum(t);
             if (t == typeof(string)) return String();
             if (t == typeof(char)) return Char();
             if (t == typeof(Color)) return Color();
