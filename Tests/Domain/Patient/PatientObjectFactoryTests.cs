@@ -1,13 +1,12 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Open.Data.Patient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Open.Data.Patient;
 
-namespace Open.Tests.Data.Patient
+namespace Open.Tests.Domain.Patient
 {
-    [TestClass]
-    public class PatientDbRecordFactoryTests
+    public class PatientObjectFactoryTests
     {
         private string firstName;
         private string lastName;
