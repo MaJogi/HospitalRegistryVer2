@@ -19,7 +19,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{A9E52605-32F9-4EB8-94DF-04E20382FAC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Documentation", "Documentation\Documentation.csproj", "{A52B1155-C1FE-4E24-B0FD-6EEF1EB09EE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Documentation", "Documentation\Documentation.csproj", "{A52B1155-C1FE-4E24-B0FD-6EEF1EB09EE2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logs", "Logs", "{BEBEBD9C-C5A9-424A-99E3-1D5289BB48E6}"
+	ProjectSection(SolutionItems) = preProject
+		Logs\10th Week TeamLogs.xlsx = Logs\10th Week TeamLogs.xlsx
+		Logs\11th Week TeamLogs.xlsx = Logs\11th Week TeamLogs.xlsx
+		Logs\12th Week TeamLogs.xlsx = Logs\12th Week TeamLogs.xlsx
+		Logs\13th Week TeamLogs.xlsx = Logs\13th Week TeamLogs.xlsx
+		Logs\14th Week TeamLogs.xlsx = Logs\14th Week TeamLogs.xlsx
+		Logs\8th Week TeamLogs.xlsx = Logs\8th Week TeamLogs.xlsx
+		Logs\9th Week TeamLogs.xlsx = Logs\9th Week TeamLogs.xlsx
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
