@@ -15,11 +15,15 @@ namespace Open.Data.Patient
         [ScaffoldColumn(false)]
         [Key]
         public string Id { get; set; } //Now creates unique hash
-
+        [NameValidation]
         public string FirstName { get; set; }
+        [NameValidation]
         public string LastName { get; set; }
+        [IdCodeValidation]
         public string IdCode { get; set; }
+        [ProblemValidation]
         public string Problem { get; set; } // will look like a comment on the site
+        [NumberPhoneValidation]
         public string PhoneNumber { get; set; }
         public DateTime ValidFrom { get; set; }
         public DateTime ValidTo { get; set; }

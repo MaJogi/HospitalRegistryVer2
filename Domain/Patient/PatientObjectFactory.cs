@@ -22,6 +22,7 @@ namespace Open.Domain.Patient
                 ValidTo = validTo ?? DateTime.MaxValue //Date when patient is excluded (deleted from system/registry)
 
             };
+
             return new PatientObject(o);
         }
     }
