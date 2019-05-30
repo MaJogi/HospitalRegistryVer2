@@ -40,7 +40,7 @@ namespace Open.Facade.Patient
             }
 
             //If patient is null
-            return o.DbRecord.Problem = "Red";
+            return null;
         }
 
         //Original way we did set methods in week4

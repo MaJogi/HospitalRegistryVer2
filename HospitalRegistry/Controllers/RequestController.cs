@@ -4,9 +4,10 @@ namespace Open.HospitalRegistry.Controllers
 {
     public class RequestController : Controller
     {
+        //[ActionName("CreateRequest")]
         public IActionResult Index()
         {
-            return View("Request");
+            return View("CreateRequest");
         }
 
         public IActionResult RequestSent()
