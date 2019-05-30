@@ -9,7 +9,7 @@ namespace Open.HospitalRegistry.Controllers
             return View("Request");
         }
 
-        public IActionResult RequestSended()
+        public IActionResult RequestSent()
         {
             return View();
         }
