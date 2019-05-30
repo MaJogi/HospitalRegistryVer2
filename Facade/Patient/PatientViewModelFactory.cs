@@ -18,11 +18,9 @@ namespace Open.Facade.Patient
                 IdCode = o.DbRecord.IdCode,
                 Problem = o.DbRecord.Problem,
                 PhoneNumber = o.DbRecord.PhoneNumber,
-                ProblemColor = setProblemColor(o), //was previously private set, but it didn't work with it
+                ProblemColor = SetProblemColor(o), //was previously private set, but it didn't work with it
                 ValidFrom = o.DbRecord.ValidFrom,
                 ValidTo = o.DbRecord.ValidTo
-                
-
             };
         }
 
@@ -33,18 +31,16 @@ namespace Open.Facade.Patient
         //}
 
         //Todo tõsta dbrecordfactorisse
-        internal static string setProblemColor(PatientObject o)
+        internal static string SetProblemColor(PatientObject o)
         {
             if (!ReferenceEquals(null, o)) // if patient isn't null
             {
                
-                return o.DbRecord.Problem == "Head" ? "Yellow" : "Magenta"; 
+                return o.DbRecord.Problem == "Head" ? "Yellow" : "";
+            }
 
-            }
-            else
-            {
-                return "Red";
-            }
+            //If patient is null
+            return o.DbRecord.Problem = "Red";
         }
 
         //Original way we did set methods in week4

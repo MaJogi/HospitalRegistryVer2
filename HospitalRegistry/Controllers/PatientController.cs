@@ -29,13 +29,12 @@ namespace Open.HospitalRegistry.Controllers
         public async Task<IActionResult> Index()
         {
             var l = await repository.GetObjectsList();
-            //model.FooterData = new FooterViewModel("Tallinn Hospital"); //TODO
             return View(new PatientViewModelsList(l));
         }
 
         [Authorize]
         [HttpPost]
-        public async Task<IActionResult>/*IActionResult*/ CreatePatient([Bind("PatientId,FirstName,LastName,IdCode,Problem,PhoneNumber,ValidFrom,ValidTo")]
+        public async Task<IActionResult> CreatePatient([Bind("PatientId,FirstName,LastName,IdCode,Problem,PhoneNumber,ValidFrom,ValidTo")]
             PatientViewModel p)
         {
             //if (id != patient.PatientId) return NotFound();
@@ -57,7 +56,6 @@ namespace Open.HospitalRegistry.Controllers
             return RedirectToAction(nameof(Index));
         }
         [Authorize]
-        [HttpGet]
         public IActionResult CreatePatient()
         {
             return View(new PatientViewModel());

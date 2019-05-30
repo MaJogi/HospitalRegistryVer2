@@ -27,15 +27,5 @@ namespace Open.HospitalRegistry.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public IActionResult PatientRequest()
-        {
-            return View("Request");
-        }
-
-        public IActionResult RequestSended()
-        {
-            return View("RequestSended");
-        }
-
     }
 }
