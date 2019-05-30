@@ -86,6 +86,7 @@ namespace Open.HospitalRegistry.Controllers
             return View(PatientViewModelFactory.Create(o));
 
         }
+        [Authorize]
         public async Task<IActionResult> Edit(string id)
         {
             //if (id == null) return NotFound();
@@ -97,7 +98,9 @@ namespace Open.HospitalRegistry.Controllers
             return View(PatientViewModelFactory.Create(o));
         }
 
-        [HttpPost] [ValidateAntiForgeryToken]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Edit([Bind("PatientId,FirstName,LastName,IdCode,Problem,PhoneNumber,ValidFrom,ValidTo")] PatientViewModel p)
         {
             if (!ModelState.IsValid) return View(p);
