@@ -52,7 +52,7 @@
                         <li>
                             @if (!User.Identity.IsAuthenticated)
                             {
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="PatientRequest">Send Request</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Request" asp-action="Index">Send Request</a>
                             }
                         </li>
 
@@ -96,7 +96,6 @@
                     <!-- Links -->
                     <p></p>
                     <h5 class="text-uppercase">About Us</h5>
-
                     <ul class="list-unstyled">
                         <li>
                             <a href="#!">Hospital History</a>
@@ -104,9 +103,10 @@
                         <li>
                             <a href="#!">Hospital News</a>
                         </li>
-
+                        <li>
+                            <a asp-controller="Privacy" asp-action="Index">Privacy</a>
+                        </li>
                     </ul>
-
                 </div>
                 <div class="col-md-4 mb-md-0 mb-3">
 
@@ -142,12 +142,10 @@
 
         </div>
 
-        <div class="  footer-copyright text-center py-3">
+        <div class="footer-copyright text-center py-3">
             © 2019 Copyright:
             <a href="https://localhost:44388/"> HaiglaRegistratuur.com</a>
         </div>
-
-
     </footer>
 
 

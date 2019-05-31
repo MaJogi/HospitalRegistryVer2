@@ -6,14 +6,13 @@
 <h1>@ViewData["Title"]</h1>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>IndexPageForPatients</title>
+    <title>Patients</title>
 </head>
 <body>
     
     <table class="table">
         <thead>
             <tr>
-                <th>@Html.DisplayNameFor(model => model.PatientId)</th>
                 <th>@Html.DisplayNameFor(model => model.FirstName)</th>
                 <th>@Html.DisplayNameFor(model => model.LastName)</th>
                 <th>@Html.DisplayNameFor(model => model.IdCode)</th>
@@ -29,7 +28,6 @@
             @foreach (var item in Model)
             {
             <tr>
-                <td>@Html.DisplayFor(notUsed => item.PatientId)</td>
                 <td>@Html.DisplayFor(notUsed => item.FirstName)</td>
                 <td>@Html.DisplayFor(notUsed => item.LastName)</td>
                 <td>@Html.DisplayFor(notUsed => item.IdCode)</td>

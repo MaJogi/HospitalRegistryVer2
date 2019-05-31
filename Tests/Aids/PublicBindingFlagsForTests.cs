@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
 using Open.Aids;
-using Open.Infra.Migrations;
 
 namespace Open.Tests.Aids
 {
