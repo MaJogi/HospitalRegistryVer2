@@ -33,8 +33,8 @@
                 <td>@Html.DisplayFor(notUsed => item.IdCode)</td>
                 <td style="background-color: @item.ProblemColor">@Html.DisplayFor(notUsed => item.Problem)</td>
                 <td>@Html.DisplayFor(notUsed => item.PhoneNumber)</td>
-                <td>@Html.DisplayFor(notUsed => item.ValidFrom)</td>
-                <td>@Html.DisplayFor(notUsed => item.ValidTo)</td>
+                <td>@Html.DisplayFor(notUsed => item.FormattedValidFrom)</td>
+                <td>@Html.DisplayFor(notUsed => item.FormattedValidTo)</td>
 
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.PatientId">Edit</a> |

@@ -23,8 +23,12 @@ namespace Open.Facade.Patient
         [NumberPhoneValidation]
         public string PhoneNumber { get; set; }
         public string ProblemColor { get; /*private*/ set; } = "red";
-        public DateTime ValidFrom { get; set; }
+        public DateTime ValidFrom { get; set; } //Maybe do formattedValidFrom right here in get?
+
+        public string FormattedValidFrom { get { return this.ValidFrom.ToString("d"); } }
+
         public DateTime ValidTo { get; set; }
+        public string FormattedValidTo { get { return this.ValidTo.ToString("d"); } }
 
 
 
