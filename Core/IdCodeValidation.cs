@@ -15,20 +15,20 @@ namespace Open.Core
 
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            if (value == null) return error(requiredField);
+            if (value == null) return Error(requiredField);
             var s = value.ToString();
-            if (s.Trim().Length != 11) return error(wrongLength);
-            if (!onlyNumbers(s)) return error(useOnlyNumbers);
+            if (s.Trim().Length != 11) return Error(wrongLength);
+            if (!OnlyNumbers(s)) return Error(useOnlyNumbers);
             return ValidationResult.Success;
         }
 
-        protected static bool onlyNumbers(string s)
+        protected static bool OnlyNumbers(string s)
         {
             if (string.IsNullOrEmpty(s)) return false;
             if (string.IsNullOrEmpty(s.Trim())) return false;
             return s.Trim().All(char.IsDigit);
         }
-        protected static ValidationResult error(string s)
+        protected static ValidationResult Error(string s)
         {
             return new ValidationResult(s);
         }
