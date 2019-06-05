@@ -9,12 +9,10 @@ namespace Open.Data.Patient
 {
     public class PatientDbRecord
     {
-        // Registry has the power to create Patient from the data that they gather
-        // from users via requests that they sent via online form
 
         [ScaffoldColumn(false)]
         [Key]
-        public string Id { get; set; } //Now creates unique hash
+        public string Id { get; set; }
         [NameValidation]
         public string FirstName { get; set; }
         [NameValidation]
@@ -32,7 +30,6 @@ namespace Open.Data.Patient
         
         
         //Todo
-        //Add phonenumber
         //Add complex logic to validate idcode and get birthdate and gender from idcode.
     }
 }

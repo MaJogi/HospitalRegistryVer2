@@ -10,6 +10,7 @@ namespace Open.Infra
 
         public DbSet<PatientDbRecord> Patients { get; set; }
 
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
