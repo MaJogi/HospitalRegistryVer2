@@ -1,22 +1,25 @@
 ﻿@model Open.Facade.Patient.PatientViewModel
+
 @{
     ViewBag.Title = "Create Patient";
     var dateNow = DateTime.Now.ToString("yyyy-MM-dd");
     var dateExpired = DateTime.Now.AddYears(5).ToString("yyyy-MM-dd");
 
     <script>
-    function ResetForm() {
-        document.getElementById("TxtFName").value = "";
-        document.getElementById("TxtLName").value = "";
-        document.getElementById("TxtIdCode").value = "";
-        document.getElementById("TxtProblem").value = "";
-        document.getElementById("TxtValidFrom").value = 0;
-        document.getElementById("TxtValidTo").value = 0;
-        document.getElementById("TxtPhoneNumber").value = "";
-    }
+        function ResetForm() {
+            document.getElementById("TxtFName").value = "";
+            document.getElementById("TxtLName").value = "";
+            document.getElementById("TxtIdCode").value = "";
+            document.getElementById("TxtProblem").value = "";
+            document.getElementById("TxtValidFrom").value = 0;
+            document.getElementById("TxtValidTo").value = 0;
+            document.getElementById("TxtPhoneNumber").value = "";
 
-    </script>
+        }
+
+/**/</script>
 }
+
 
 <!DOCTYPE html>
 <html>
@@ -25,36 +28,70 @@
     <title>CreatePatient</title>
 </head>
 <body>
-<div>
-    <form asp-action="CreatePatient" asp-controller="Patient" method="post">
-        @Html.AntiForgeryToken()
-        <p>
-            First Name: <input type="text" id="TxtFName" name="FirstName" Value="" />
-                        <font color="red"> @Html.ValidationMessage("FirstName")</font>
-        <p />
-        <p>
-            Last Name: <input type="text" id="TxtLName" name="LastName" Value="" />
-                       <font color="red"> @Html.ValidationMessage("LastName")</font>
-        <p />
-        <p>
-            IdCode: <input type="text" id="TxtIdCode" name="IdCode" Value="" />
-                    <font color="red">@Html.ValidationMessage("IdCode")</font>
-        <p />
-        <p>Problem: <input type="text" id="TxtProblem" name="Problem" Value="" />
-                    <font color="red">@Html.ValidationMessage("Problem")</font>
-        <p />
-        <p>
-            Phone Number: <input type="text" id="TxtPhoneNumber" name="PhoneNumber" Value="" />
-                          <font color="red">@Html.ValidationMessage("PhoneNumber")</font>
-        <p />
-        <p>Valid From: <input type="date" id="TxtValidFrom" name="ValidFrom" Value="" />
-        <p />
-        <p>Valid To: <input type="date" id="TxtValidTo" name="ValidTo" Value="" /><p />
+    <h4>Patient</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="CreatePatient">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="PatientId" />
+                <div class="form-group">
+                    <label asp-for="FirstName" class="control-label"></label>
+                    <input asp-for="FirstName" class="form-control" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LastName" class="control-label"></label>
+                    <input asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="IdCode" class="control-label"></label>
+                    <input asp-for="IdCode" class="form-control" />
+                    <span asp-validation-for="IdCode" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Problem" class="control-label"></label>
+                    <input asp-for="Problem" class="form-control" />
+                    <span asp-validation-for="Problem" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PhoneNumber" class="control-label"></label>
+                    <input asp-for="PhoneNumber" class="form-control" />
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ValidFrom" class="control-label"></label>
+                    <input asp-for="ValidFrom" class="form-control" />
+                    <span asp-validation-for="ValidFrom" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ValidTo" class="control-label"></label>
+                    <input asp-for="ValidTo" class="form-control" />
+                    <span asp-validation-for="ValidTo" class="text-danger"></span>
+                </div>
 
-        <input type="submit" name="BtnSubmit" value="Save Patient" onclick="return IsValid();" />
-        <input type="button" name="BtnReset" value="Reset" onclick="ResetForm();" />
-        @*<input type="submit" name="BtnSubmit" value="Cancel" />*@
-    </form>
-</div>
+                <div class="form-group">
+                    <input type="submit" value="Save Patient" class="btn btn-primary" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Reset" onclick="ResetForm(); class="btn btn-primary" />
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
 </body>
 </html>
+
+
+
+
+
+
+
