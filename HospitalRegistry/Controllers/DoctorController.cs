@@ -27,7 +27,7 @@ namespace Open.HospitalRegistry.Controllers
 
         [Authorize]
         [HttpPost]
-        public async Task<IActionResult> CreatePatient([Bind("PatientId,FirstName,LastName,IdCode,PhoneNumber,HierDate")]
+        public async Task<IActionResult> CreateDoctor([Bind("PatientId,FirstName,LastName,IdCode,PhoneNumber,HierDate")]
             DoctorViewModel p)
         {
             //if (id != patient.PatientId) return NotFound();

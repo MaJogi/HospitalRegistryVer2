@@ -52,7 +52,13 @@
                         <li>
                             @if (!User.Identity.IsAuthenticated)
                             {
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Request" asp-action="Index">Send Request</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Request" asp-action="Index">Send Request</a>
+                            }
+                        </li>
+                        <li>
+                            @if (!User.Identity.IsAuthenticated)
+                            {
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Doctor" asp-action="CreateDoctor">Create Doctor</a>
                             }
                         </li>
 
