@@ -21,6 +21,6 @@ namespace Open.Data.Doctor
         public string PhoneNumber { get; set; }
         public DateTime HireDate { get; set; }
         //public List<Department> Departments { get; set; }
-        public List<string> Departments { get; set; }
+        public string Departments { get; set; } //cannot create list, we have to think about how we will write a lot of departments in one string.
     }
 }
