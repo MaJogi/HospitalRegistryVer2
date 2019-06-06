@@ -16,10 +16,8 @@ namespace Open.Domain.Patient
                 FirstName = firstName ?? string.Empty,
                 LastName = lastName ?? string.Empty,
                 IdCode = idCode,
-                Problem = problem,
                 PhoneNumber = phoneNumber ?? string.Empty,
                 ValidFrom = validFrom ?? DateTime.Now, //DateOfPatientCreation //Maybe DateTime.MinValue
-                ValidTo = validTo ?? DateTime.MaxValue //Date when patient is excluded (deleted from system/registry)
 
             };
 
