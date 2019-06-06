@@ -7,9 +7,9 @@ namespace Open.Domain.Patient
 {
     public class PatientObjectsList : List<PatientObject>
     {
-        public PatientObjectsList(IEnumerable<PatientDbRecord> l)
+        public PatientObjectsList(IEnumerable<PatientDbRecord> patientDbRecords)
         {
-            foreach (var e in l) { Add(new PatientObject(e));}                                                      
+            foreach (var patientDbRecord in patientDbRecords) { Add(new PatientObject(patientDbRecord));}                                                      
         }
     }
 }
