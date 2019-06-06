@@ -31,28 +31,28 @@
     <form asp-action="Index" asp-controller="Request" method="post">
         @Html.AntiForgeryToken()
         <p>
-        First Name: <input type="text" id="TxtFName" name="FirstName" Value=""/>
-        <font color="red"> @Html.ValidationMessage("FirstName")</font>
-        <p/>
+            First Name: <input type="text" id="TxtFName" name="FirstName" Value="" />
+            <font color="red"> @Html.ValidationMessage("FirstName")</font>
+        <p />
         <p>
-        Last Name: <input type="text" id="TxtLName" name="LastName" Value=""/>
-        <font color="red"> @Html.ValidationMessage("LastName")</font>
-        <p/>
+            Last Name: <input type="text" id="TxtLName" name="LastName" Value="" />
+            <font color="red"> @Html.ValidationMessage("LastName")</font>
+        <p />
         <p>
-        IdCode: <input type="text" id="TxtIdCode" name="IdCode" Value=""/>
-        <font color="red">@Html.ValidationMessage("IdCode")</font>
-        <p/>
+            IdCode: <input type="text" id="TxtIdCode" name="IdCode" Value="" />
+            <font color="red">@Html.ValidationMessage("IdCode")</font>
+        <p />
         <p>
-        Sõnum: <input type="text" id="TxtProblem" name="Problem" Value=""/>
-        <font color="red">@Html.ValidationMessage("Problem")</font>
-        <p/>
+            Sõnum: <input type="text" id="TxtProblem" name="Problem" Value="" />
+            <font color="red">@Html.ValidationMessage("Problem")</font>
+        <p />
         <p>
-        Phone Number: <input type="text" id="TxtPhoneNumber" name="PhoneNumber" Value=""/>
-        <font color="red">@Html.ValidationMessage("PhoneNumber")</font>
-        
-        <input asp-action="RequestSent" type="submit" name="BtnSubmit" value="Send Request" />
-        <input type="button" name="BtnReset" value="Reset" onclick="ResetForm();" />
-        <input asp-action="Index" type="submit" name="BtnSubmit" value="Cancel" />
+            Phone Number: <input type="text" id="TxtPhoneNumber" name="PhoneNumber" Value="" />
+            <font color="red">@Html.ValidationMessage("PhoneNumber")</font>
+        </p>
+            <input asp-action="RequestSent" type="submit" name="BtnSubmit" value="Send Request" />
+            <input type="button" name="BtnReset" value="Reset" onclick="ResetForm();" />
+            <input asp-action="Index" type="submit" name="BtnSubmit" value="Cancel" />
     </form>
 </div>
 </body>
