@@ -18,6 +18,7 @@ namespace Open.Infra.Doctor
 
         public async Task<DoctorObject> GetObject(string id)
         {
+
             var o = await db.Doctors.FindAsync(id);
             return new DoctorObject(o);
         }
