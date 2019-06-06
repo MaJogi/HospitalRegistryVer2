@@ -9,7 +9,7 @@ namespace Open.Domain.Doctor
     public class DoctorObjectFactory
     {
         public static DoctorObject Create(string firstName, string lastName,
-            string idCode, string problem, string phoneNumber,
+            string idCode, string phoneNumber,
             DateTime hireDate/*,string departments*/)
         {
             var o = new DoctorDbRecord()
