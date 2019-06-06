@@ -33,7 +33,7 @@
         <div class="col-md-4">
             <form asp-action="CreatePatient">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <input type="hidden" asp-for="PatientId" />
+                <input type="hidden" asp-for="DoctorId" />
                 <div class="form-group">
                     <label asp-for="FirstName" class="control-label"></label>
                     <input asp-for="FirstName" class="form-control" />
@@ -49,26 +49,22 @@
                     <input asp-for="IdCode" class="form-control" />
                     <span asp-validation-for="IdCode" class="text-danger"></span>
                 </div>
-                <div class="form-group">
-                    <label asp-for="Problem" class="control-label"></label>
-                    <input asp-for="Problem" class="form-control" />
-                    <span asp-validation-for="Problem" class="text-danger"></span>
-                </div>
+                
                 <div class="form-group">
                     <label asp-for="PhoneNumber" class="control-label"></label>
                     <input asp-for="PhoneNumber" class="form-control" />
                     <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="ValidFrom" class="control-label"></label>
-                    <input asp-for="ValidFrom" class="form-control" />
-                    <span asp-validation-for="ValidFrom" class="text-danger"></span>
+                    <label asp-for="HireDate" class="control-label"></label>
+                    <input asp-for="HireDate" class="form-control" />
+                    <span asp-validation-for="HireDate" class="text-danger"></span>
                 </div>
-                <div class="form-group">
-                    <label asp-for="ValidTo" class="control-label"></label>
+                @*<div class="form-group">
+                    <label asp-for="Departments" class="control-label"></label>
                     <input asp-for="ValidTo" class="form-control" />
                     <span asp-validation-for="ValidTo" class="text-danger"></span>
-                </div>
+                </div>*@
 
                 <div class="form-group">
                     <input type="submit" value="Save Patient" class="btn btn-primary" />

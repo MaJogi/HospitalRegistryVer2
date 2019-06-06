@@ -6,7 +6,7 @@ using System.ComponentModel;
 
 namespace Open.Facade.Doctor
 {
-    class DoctorViewModel
+    public class DoctorViewModel
     {
         [DisplayName("ID")]
         public string DoctorId { get; set; }

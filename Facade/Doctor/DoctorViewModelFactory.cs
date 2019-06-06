@@ -16,8 +16,8 @@ namespace Open.Facade.Doctor
                 LastName = o.DbRecord.LastName,
                 IdCode = o.DbRecord.IdCode,
                 PhoneNumber = o.DbRecord.PhoneNumber,
-                ValidFrom = o.DbRecord.HireDate,
-                Departments = o.DbRecord.Departments
+                HireDate = o.DbRecord.HireDate,
+                //Departments = o.DbRecord.Departments
             };
         }
     }
