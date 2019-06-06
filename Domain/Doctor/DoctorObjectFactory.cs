@@ -10,7 +10,7 @@ namespace Open.Domain.Doctor
     {
         public static DoctorObject Create(string firstName, string lastName,
             string idCode, string problem, string phoneNumber,
-            DateTime hireDate,string departments)
+            DateTime hireDate/*,string departments*/)
         {
             var o = new DoctorDbRecord()
             {
@@ -19,7 +19,7 @@ namespace Open.Domain.Doctor
                 IdCode = idCode,
                 PhoneNumber = phoneNumber ?? string.Empty,
                 HireDate = hireDate,
-                Departments = departments,
+                //Departments = departments,
             };
 
             return new DoctorObject(o);

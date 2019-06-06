@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Open.Facade.Doctor
 {
-    class DoctorViewModelFactory
+    public class DoctorViewModelFactory
     {
         public static DoctorViewModel Create(DoctorObject o)
         {
