@@ -17,7 +17,7 @@ namespace Open.Facade.Doctor
                 IdCode = o.DbRecord.IdCode,
                 PhoneNumber = o.DbRecord.PhoneNumber,
                 HireDate = o.DbRecord.HireDate,
-                //Departments = o.DbRecord.Departments
+               
             };
         }
     }
