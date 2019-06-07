@@ -14,8 +14,10 @@ using Open.HospitalRegistry.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Open.Domain.Doctor;
 using Open.Domain.Patient;
 using Open.Infra;
+using Open.Infra.Doctor;
 using Open.Infra.Patient;
 
 namespace Open.HospitalRegistry
@@ -52,6 +54,7 @@ namespace Open.HospitalRegistry
                 .AddNewtonsoftJson();
             services.AddRazorPages();
             services.AddScoped<IPatientObjectsRepository, PatientObjectsRepository>();
+            services.AddScoped<IDoctorObjectsRepository, DoctorObjectsRepository>();
             //Removed because new sdk created other ones. Which is right up.
             //services.AddMvc()
             //    .AddNewtonsoftJson();

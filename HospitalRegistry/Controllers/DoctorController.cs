@@ -27,7 +27,7 @@ namespace Open.HospitalRegistry.Controllers
 
         [Authorize]
         [HttpPost]
-        public async Task<IActionResult> CreateDoctor([Bind("PatientId,FirstName,LastName,IdCode,PhoneNumber,HierDate")]
+        public async Task<IActionResult> CreateDoctor([Bind("PatientId,FirstName,LastName,IdCode,PhoneNumber,HireDate")]
             DoctorViewModel p)
         {
             //if (id != patient.PatientId) return NotFound();
@@ -42,13 +42,13 @@ namespace Open.HospitalRegistry.Controllers
             }
             else
             {
-                return View("CreatePatient");
+                return View("CreateDoctor");
             }
 
             return RedirectToAction(nameof(Index));
         }
         [Authorize]
-        public IActionResult CreatePatient()
+        public IActionResult CreateDoctor()
         {
             return View(new DoctorViewModel());
         }
@@ -93,7 +93,7 @@ namespace Open.HospitalRegistry.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public async Task<IActionResult> Edit([Bind("PatientId,FirstName,LastName,IdCode,Problem,PhoneNumber,ValidFrom,ValidTo")] DoctorViewModel p)
+        public async Task<IActionResult> Edit(/*[Bind("PatientId,FirstName,LastName,IdCode,Problem,PhoneNumber,ValidFrom,ValidTo")] */DoctorViewModel p)
         {
             if (!ModelState.IsValid) return View(p);
             var o = await repository.GetObject(p.DoctorId);

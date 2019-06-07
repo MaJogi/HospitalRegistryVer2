@@ -1,9 +1,8 @@
 ﻿@model Open.Facade.Doctor.DoctorViewModel
 
 @{
-    ViewBag.Title = "Create Patient";
-    var dateNow = DateTime.Now.ToString("yyyy-MM-dd");
-    var dateExpired = DateTime.Now.AddYears(5).ToString("yyyy-MM-dd");
+    ViewBag.Title = "Create Doctor";
+    //var dateNow = DateTime.Now.ToString("yyyy-MM-dd");
 
     <script>
         function ResetForm() {
@@ -24,14 +23,14 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>CreatePatient</title>
+    <title>CreateDoctor</title>
 </head>
 <body>
-    <h4>Patient</h4>
+    <h4>Doctor</h4>
     <hr />
     <div class="row">
         <div class="col-md-4">
-            <form asp-action="CreatePatient">
+            <form asp-action="CreateDoctor">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <input type="hidden" asp-for="DoctorId" />
                 <div class="form-group">
