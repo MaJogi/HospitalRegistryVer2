@@ -81,7 +81,7 @@ namespace Open.HospitalRegistry.Areas.Identity.Pages.Account
                         values: new { userId = user.Id, code = code },
                         protocol: Request.Scheme);
 
-                    await _userManager.AddToRoleAsync(user, UsersRoles.DefaultUser);
+                    await _userManager.AddToRoleAsync(user, UsersRoles.DefaultUser); //adding to default user
                     await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
                         $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 

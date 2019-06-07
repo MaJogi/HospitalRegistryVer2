@@ -15,6 +15,7 @@ namespace Open.HospitalRegistry.Data
             //initializing custom roles 
             var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
             var UserManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+
             IdentityResult roleResult;
 
             foreach (var roleName in UsersRoles.Roles)
@@ -27,15 +28,18 @@ namespace Open.HospitalRegistry.Data
                 }
             }
 
+            //ApplicationUser user = await UserManager.FindByEmailAsync("marko199822@gmail.com");
+
+
             // creating a super user who could maintain the web app
             var poweruser = new ApplicationUser
             {
-                UserName = Configuration.GetSection("Appsettings")["UserEmail"],
+                UserName = Configuration.GetSection("AppSettings")["UserEmail"],
                 Email = Configuration.GetSection("AppSettings")["UserEmail"]
             };
 
-            string userPassword = Configuration.GetSection("AppSettings")["UserPassword"];
-            var user = await UserManager.FindByEmailAsync(Configuration.GetSection("AppSettings")["UserEmail"]);
+            string userPassword = Configuration.GetSection("appsettings")["UserPassword"];
+            var user = await UserManager.FindByEmailAsync(Configuration.GetSection("appsettings")["UserEmail"]);
 
             if (user == null)
             {

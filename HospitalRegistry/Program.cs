@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Open.HospitalRegistry.Data;
+using Open.Infra;
+using Open.Infra.Doctor;
 
 namespace Open.HospitalRegistry
 {
@@ -27,6 +29,8 @@ namespace Open.HospitalRegistry
                 {
                     var serviceProvider = services.GetRequiredService<IServiceProvider>();
                     var configuration = services.GetRequiredService<IConfiguration>();
+                    var context = services.GetRequiredService<RegistryDbContext>();
+                    PatientsDoctorsInitializer.Initialize(context);
                     Seed.CreateRoles(serviceProvider, configuration).Wait();
                 }
                 catch (Exception e)

@@ -10,8 +10,8 @@ using Open.Infra;
 namespace Open.Infra.Migrations
 {
     [DbContext(typeof(RegistryDbContext))]
-    [Migration("20190606182924_initial")]
-    partial class initial
+    [Migration("20190607104021_nimi")]
+    partial class nimi
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,8 +24,6 @@ namespace Open.Infra.Migrations
             modelBuilder.Entity("Open.Data.Doctor.DoctorDbRecord", b =>
                 {
                     b.Property<string>("Id");
-
-                    b.Property<string>("Departments");
 
                     b.Property<string>("FirstName");
 
@@ -40,6 +38,29 @@ namespace Open.Infra.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Doctors");
+                });
+
+            modelBuilder.Entity("Open.Data.Doctor.DoctorPatientIDbRecord", b =>
+                {
+                    b.Property<string>("Id");
+
+                    b.Property<string>("PatientId");
+
+                    b.Property<string>("DoctorId");
+
+                    b.Property<DateTime?>("ValidFrom");
+
+                    b.Property<DateTime?>("ValidTo");
+
+                    b.HasKey("Id", "PatientId", "DoctorId");
+
+                    b.HasAlternateKey("Id");
+
+                    b.HasIndex("DoctorId");
+
+                    b.HasIndex("PatientId");
+
+                    b.ToTable("PatientsDoctors");
                 });
 
             modelBuilder.Entity("Open.Data.Patient.PatientDbRecord", b =>
@@ -84,6 +105,21 @@ namespace Open.Infra.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Requests");
+                });
+
+            modelBuilder.Entity("Open.Data.Doctor.DoctorPatientIDbRecord", b =>
+                {
+                    b.HasOne("Open.Data.Doctor.DoctorDbRecord", "Doctor")
+                        .WithMany()
+                        .HasForeignKey("DoctorId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Open.Data.Patient.PatientDbRecord", "Patient")
+                        .WithMany()
+                        .HasForeignKey("PatientId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

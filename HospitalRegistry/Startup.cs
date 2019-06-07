@@ -55,6 +55,7 @@ namespace Open.HospitalRegistry
             services.AddRazorPages();
             services.AddScoped<IPatientObjectsRepository, PatientObjectsRepository>();
             services.AddScoped<IDoctorObjectsRepository, DoctorObjectsRepository>();
+            services.AddScoped<IDoctorPatientObjectsRepository, PatientDoctorRepository>();
             //Removed because new sdk created other ones. Which is right up.
             //services.AddMvc()
             //    .AddNewtonsoftJson();
