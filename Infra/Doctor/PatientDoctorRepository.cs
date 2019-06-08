@@ -61,9 +61,12 @@ namespace Open.Infra.Doctor
             //    patient.UsedInCountry(new Country(c.Country));
         }
 
-        public Task LoadPatients(DoctorObject doctor)
+        public async Task LoadPatients(DoctorObject doctor)
         {
-            throw new NotImplementedException();
+            if (doctor is null) return;
+            var id = doctor.DbRecord?.Id ?? string.Empty;
+            var countries = await dbSet.Include(x => x.Patient).Where(x => x.DoctorId == id)
+                .AsNoTracking().ToListAsync();
         }
     }
 }
