@@ -18,6 +18,6 @@ namespace Open.Data.Request
         public string PhoneNumber { get; set; }
         public DateTime DateSent { get; set; }
         
-        //Todo
+        
     }
 }
