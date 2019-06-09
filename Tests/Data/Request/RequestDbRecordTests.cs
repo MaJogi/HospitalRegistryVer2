@@ -57,7 +57,7 @@ namespace Open.Tests.Data.Request
             Assert.AreEqual(expected, "39805225223");
         }
         [TestMethod]
-        public void ProblemTest()
+        public void MessageTest()
         {
             string expected = request.Message = "Head";
             Assert.AreEqual(expected, "Head");
@@ -70,7 +70,7 @@ namespace Open.Tests.Data.Request
         }
 
         [TestMethod]
-        public void DataSentTest()
+        public void DateSentTest()
         {
             DateTime expected = request.DateSent = DateTime.Today;
             Assert.AreEqual(expected, DateTime.Today);
