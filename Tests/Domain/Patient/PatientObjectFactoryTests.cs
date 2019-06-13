@@ -34,7 +34,6 @@ namespace Open.Tests.Domain.Patient
             lastName = "Baptev";
             problem = "etozelaptev";
             phoneNumber = "55555555";
-            // testPatient = PatientObjectFactory.Create(firstName, lastName, idCode, problem, phoneNumber, min, max);
         }
 
         [TestMethod]
@@ -45,17 +44,17 @@ namespace Open.Tests.Domain.Patient
             Assert.IsNotNull(testPatient);
             
         }
-        private void validateResults(string firstName = "", string lastName = "",
-            string IdCode = "", string problem = "", string phoneNumber = "",
-            DateTime? validFrom = null, DateTime? validTo = null)
-        {
-            Assert.AreEqual(firstName, r.FirstName);
-            Assert.AreEqual(lastName, r.FirstName);
-            Assert.AreEqual(IdCode, r.FirstName);
-            Assert.AreEqual(problem, r.FirstName);
-            Assert.AreEqual(phoneNumber, r.FirstName);
-            //add validfrom thing
-            //add validTo thing
-        }
+        //private void validateResults(string firstName = "", string lastName = "",
+        //    string IdCode = "", string problem = "", string phoneNumber = "",
+        //    DateTime? validFrom = null, DateTime? validTo = null)
+        //{
+        //    Assert.AreEqual(firstName, r.FirstName);
+        //    Assert.AreEqual(lastName, r.FirstName);
+        //    Assert.AreEqual(IdCode, r.FirstName);
+        //    Assert.AreEqual(problem, r.FirstName);
+        //    Assert.AreEqual(phoneNumber, r.FirstName);
+        //    //add validfrom thing
+        //    //add validTo thing
+        //}
     }
 }
