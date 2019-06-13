@@ -116,63 +116,7 @@ namespace Open.HospitalRegistry.Controllers
             return RedirectToAction("Index");
         }
 
-        //[Authorize]
-        //[ValidateAntiForgeryToken]
-        //public IActionResult SavePatient(Patient p, string BtnSubmit)
-        //{
-
-        //    if (BtnSubmit != "Save Patient") return RedirectToAction("Index");
-        //    if (!ModelState.IsValid) return View("CreatePatient", new CreatePatientViewModel());
-        //    return save(p);
-        //}
-        //[Authorize]
-        //private IActionResult save(Patient p)
-        //{
-        //    Patients patients = new Patients();
-        //    patients.Save(p, db);
-        //    return RedirectToAction("Index");
-        //}
-        //[Authorize]
-        //public async Task<IActionResult> Edit(int? id)
-        //{
-        //    if (id == null) return NotFound();
-        //    var patient = await db.Patients.SingleOrDefaultAsync
-        //        (m => m.PatientId == id);
-        //    if (patient == null) return NotFound();
-        //    return View("Edit", patient);
-        //}
-        //[Authorize]
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Edit(int id, [Bind("PatientId,FirstName,LastName,IdCode,Problem,ValidFrom,ValidTo")]
-        //    Patient patient)
-        //{
-        //    if (id != patient.PatientId) return NotFound();
-        //    if (ModelState.IsValid)
-        //    {
-        //        try
-        //        {
-        //            db.Update(patient);
-        //            await db.SaveChangesAsync();
-        //        }
-        //        catch (DbUpdateConcurrencyException)
-        //        {
-        //            if (!PatientExists(patient.PatientId)) return NotFound();
-        //            throw;
-        //        }
-
-        //        return RedirectToAction(nameof(Index));
-        //    }
-
-        //    return View(patient);
-        //}
-
-        //private bool PatientExists(int id)
-        //{
-        //    return db.Patients.Any(e => e.PatientId == id);
-
-
-        //}
+       
 
     }
 }
