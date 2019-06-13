@@ -24,7 +24,7 @@ namespace Open.Tests.Facade.Doctor
         }
 
         [TestMethod]
-        public void PatientIdTest()
+        public void DoctorIdTest()
         {
 
             string actual = getRandomObject().DoctorId = "1asfpl6lüypkagrt";
@@ -57,6 +57,13 @@ namespace Open.Tests.Facade.Doctor
         {
             string expected = getRandomObject().PhoneNumber = "53443532";
             Assert.AreEqual(expected, "53443532");
+        }
+
+        [TestMethod]
+        public void HireDateTest()
+        {
+            DateTime expected = getRandomObject().HireDate = DateTime.MaxValue;
+            Assert.AreEqual(expected, DateTime.MaxValue);
         }
     }
 }
