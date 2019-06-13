@@ -8,7 +8,7 @@ using Open.Data.Patient;
 
 namespace Open.Tests.Data.Doctors
 {
-    class DoctorPatientIDbRecordTests
+    public class DoctorPatientIDbRecordTests
     {
         [TestClass]
         public class DoctorDbRecordTests : ObjectTests<DoctorPatientIDbRecord>
