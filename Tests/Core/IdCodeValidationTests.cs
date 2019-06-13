@@ -8,7 +8,7 @@ using Open.Core;
 namespace Open.Tests.Core
 {
     [TestClass]
-    public class IdCodeValidationTeslts : IdCodeValidation //Kas nii võib teha?
+    public class IdCodeValidationTests //Kas nii võib teha?
     {
         //IsValid
         //protected override ValidationResult IsValid(object value, ValidationContext validationContext)
@@ -40,36 +40,37 @@ namespace Open.Tests.Core
             //if (string.IsNullOrEmpty(s)) return false;
             //if (string.IsNullOrEmpty(s.Trim())) return false;
             //return s.Trim().All(char.IsDigit);
+
             string s = "55555555";
-            bool acutalResult = OnlyNumbers(s);
-            Assert.IsTrue(acutalResult);
+            bool actualResult = IdCodeValidation.OnlyNumbers(s);
+            Assert.IsTrue(actualResult);
         }
         [TestMethod]
         public static void OnlyNumbersNullorEmptyTest()
         {
             string s = null;
-            bool actualResult = OnlyNumbers(s);
+            bool actualResult = IdCodeValidation.OnlyNumbers(s);
             Assert.IsFalse(actualResult);
         }
         [TestMethod]
         public static void OnlyNumbersNullorEmptryTrimTest()
         {
             string s = "      ";
-            bool actualResult = OnlyNumbers(s);
+            bool actualResult = IdCodeValidation.OnlyNumbers(s);
             Assert.IsFalse(actualResult);
         }
         [TestMethod]
         public static void OnlyNumbersLettersTest()
         {
             string s = "ABC";
-            bool actualResult = OnlyNumbers(s);
+            bool actualResult = IdCodeValidation.OnlyNumbers(s);
             Assert.IsFalse(actualResult);
         }
         [TestMethod]
         public static void OnlyNumbersSymbolsTest()
         {
             string s = "@$";
-            bool actualResult = OnlyNumbers(s);
+            bool actualResult = IdCodeValidation.OnlyNumbers(s);
             Assert.IsFalse(actualResult);
         }
 
@@ -79,7 +80,7 @@ namespace Open.Tests.Core
         {
             string s = "Suvaline warning";
             ValidationResult expectedResult = new ValidationResult(s);
-            ValidationResult actualResult = Error(s);
+            ValidationResult actualResult = IdCodeValidation.Error(s);
 
             Assert.AreEqual(expectedResult, actualResult);
         }

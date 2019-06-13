@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace Open.Core
 {
@@ -22,13 +24,13 @@ namespace Open.Core
             return ValidationResult.Success;
         }
 
-        protected static bool OnlyNumbers(string s)
+        internal static bool OnlyNumbers(string s)
         {
             if (string.IsNullOrEmpty(s)) return false;
             if (string.IsNullOrEmpty(s.Trim())) return false;
             return s.Trim().All(char.IsDigit);
         }
-        protected static ValidationResult Error(string s)
+        internal static ValidationResult Error(string s)
         {
             return new ValidationResult(s);
         }
