@@ -20,25 +20,30 @@ namespace Open.Tests.Domain.Patient
         private DateTime validTo;
         private PatientDbRecord r;
         private PatientObject testPatient;
+        private DateTime min;
+        private DateTime max;
+        
 
         [TestInitialize]
-        private void initializeTestData()
+        public void initializeTestData()
         {
-            var min = DateTime.MinValue;
-            var max = DateTime.MaxValue;
+            min = DateTime.MinValue;
+            max = DateTime.MaxValue;
             idCode = "39805225211";
             firstName = "Egor";
             lastName = "Baptev";
             problem = "etozelaptev";
             phoneNumber = "55555555";
-            testPatient = PatientObjectFactory.Create(firstName, lastName, idCode, problem, phoneNumber, min, max);
-
+            // testPatient = PatientObjectFactory.Create(firstName, lastName, idCode, problem, phoneNumber, min, max);
         }
 
         [TestMethod]
         public void DoesFactoryMethodWorkTest()
         {
+           
+            testPatient = PatientObjectFactory.Create(firstName, lastName, idCode, problem, phoneNumber, min, max);
             Assert.IsNotNull(testPatient);
+            
         }
         private void validateResults(string firstName = "", string lastName = "",
             string IdCode = "", string problem = "", string phoneNumber = "",
