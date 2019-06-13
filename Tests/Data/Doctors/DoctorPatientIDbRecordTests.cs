@@ -4,6 +4,7 @@ using Open.Data.Doctor;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Open.Data.Patient;
 
 namespace Open.Tests.Data.Doctors
 {
@@ -55,13 +56,15 @@ namespace Open.Tests.Data.Doctors
             [TestMethod]
             public void DoctorTest()
             {
-                Assert.IsNotNull(obj);
+                doctorPatient.Doctor = new DoctorDbRecord();
+                Assert.IsNotNull(doctorPatient.Doctor);
             }
 
             [TestMethod]
             public void PatientTest()
             {
-                Assert.IsNotNull(obj);
+                doctorPatient.Patient = new PatientDbRecord();
+                Assert.IsNotNull(doctorPatient.Patient);
             }
 
             [TestMethod]
