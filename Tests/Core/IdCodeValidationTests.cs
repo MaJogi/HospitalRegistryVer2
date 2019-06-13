@@ -8,7 +8,7 @@ using Open.Core;
 namespace Open.Tests.Core
 {
     [TestClass]
-    public class IdCodeValidationTests //Kas nii võib teha?
+    public class IdCodeValidationTests
     {
         //IsValid
         //protected override ValidationResult IsValid(object value, ValidationContext validationContext)
@@ -21,7 +21,7 @@ namespace Open.Tests.Core
         //}
 
         [TestMethod]
-        public static void IsValidCorrectTest()
+        public void IsValidCorrectTest()
         {
             object value = "5";
             string s = value.ToString();
@@ -35,7 +35,7 @@ namespace Open.Tests.Core
 
         //OnlyNumbers
         [TestMethod]
-        public static void OnlyNumbersTest()
+        public void OnlyNumbersTest()
         {
             //if (string.IsNullOrEmpty(s)) return false;
             //if (string.IsNullOrEmpty(s.Trim())) return false;
@@ -46,28 +46,28 @@ namespace Open.Tests.Core
             Assert.IsTrue(actualResult);
         }
         [TestMethod]
-        public static void OnlyNumbersNullorEmptyTest()
+        public void OnlyNumbersNullorEmptyTest()
         {
             string s = null;
             bool actualResult = IdCodeValidation.OnlyNumbers(s);
             Assert.IsFalse(actualResult);
         }
         [TestMethod]
-        public static void OnlyNumbersNullorEmptryTrimTest()
+        public void OnlyNumbersNullorEmptryTrimTest()
         {
             string s = "      ";
             bool actualResult = IdCodeValidation.OnlyNumbers(s);
             Assert.IsFalse(actualResult);
         }
         [TestMethod]
-        public static void OnlyNumbersLettersTest()
+        public void OnlyNumbersLettersTest()
         {
             string s = "ABC";
             bool actualResult = IdCodeValidation.OnlyNumbers(s);
             Assert.IsFalse(actualResult);
         }
         [TestMethod]
-        public static void OnlyNumbersSymbolsTest()
+        public void OnlyNumbersSymbolsTest()
         {
             string s = "@$";
             bool actualResult = IdCodeValidation.OnlyNumbers(s);
@@ -76,13 +76,13 @@ namespace Open.Tests.Core
 
         //Error
         [TestMethod]
-        public static void ErrorTest() //Test not shown in test explorer
+        public void ErrorTest() //Test not shown in test explorer
         {
             string s = "Suvaline warning";
             ValidationResult expectedResult = new ValidationResult(s);
             ValidationResult actualResult = IdCodeValidation.Error(s);
 
-            Assert.AreEqual(expectedResult, actualResult);
+            Assert.AreEqual("Suvaline warning", actualResult.ErrorMessage);
         }
     }
 }
