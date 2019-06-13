@@ -59,5 +59,46 @@ namespace Open.Tests.Facade.Patient
             Assert.AreEqual(expected, "53443532");
         }
 
+        [TestMethod]
+        public void ProblemTest()
+        {
+            string expected = getRandomObject().PhoneNumber = "Head";
+            Assert.AreEqual(expected, "Head");
+        }
+
+        [TestMethod]
+        public void ProblemColorTest()
+        {
+            string expected = getRandomObject().ProblemColor = "red";
+            Assert.AreEqual(expected, "red");
+        }
+
+        [TestMethod]
+        public void ValidFromTest()
+        {
+            DateTime expected = getRandomObject().ValidFrom = DateTime.Today;
+            Assert.AreEqual(expected, DateTime.Today);
+        }
+
+        [TestMethod]
+        public void FormattedValidFromTest()
+        {
+            DateTime expected = getRandomObject().ValidFrom = DateTime.Today;
+            Assert.AreEqual(expected, DateTime.Today);
+        }
+
+        [TestMethod]
+        public void ValidToTest()
+        {
+            DateTime expected = getRandomObject().ValidTo = DateTime.MaxValue;
+            Assert.AreEqual(expected, DateTime.MaxValue);
+        }
+
+        [TestMethod]
+        public void FormattedValidToTest()
+        {
+            DateTime expected = getRandomObject().ValidFrom = DateTime.Today;
+            Assert.AreEqual(expected, DateTime.Today);
+        }
     }
 }
