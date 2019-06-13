@@ -31,14 +31,16 @@ namespace Open.Tests.Domain.Doctor
             max = DateTime.MaxValue;
             //testPatient = PatientObjectFactory();
             testPatient = PatientObjectFactory.Create("vlad", "jek", "39805225211", "Head", "55555555", min, max);
+            testDoctor = DoctorObjectFactory.Create("Maia", "Ahha", "39805225221", "55555555", max);
+
         }
 
         [TestMethod]
         public void DoesFactoryMethodWorkTest()
         {
 
-            //testPatientDoctor = PatientDoctorObject.Create(testPatient, testDoctor, min, max);
-            //Assert.IsNotNull(testPatient);
+            testPatientDoctor = PatientDoctorFactory.Create(testPatient, testDoctor, min, max);
+            Assert.IsNotNull(testPatient);
 
         }
     }
