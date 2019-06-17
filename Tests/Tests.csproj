@@ -11,8 +11,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Aids\Extensions\**" />
     <Compile Remove="Core\Patient\**" />
+    <EmbeddedResource Remove="Aids\Extensions\**" />
     <EmbeddedResource Remove="Core\Patient\**" />
+    <None Remove="Aids\Extensions\**" />
     <None Remove="Core\Patient\**" />
   </ItemGroup>
 
@@ -31,10 +34,6 @@
     <ProjectReference Include="..\Facade\Facade.csproj" />
     <ProjectReference Include="..\HospitalRegistry\HospitalRegistry.csproj" />
     <ProjectReference Include="..\Infra\Infra.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Aids\Extensions\" />
   </ItemGroup>
 
 </Project>

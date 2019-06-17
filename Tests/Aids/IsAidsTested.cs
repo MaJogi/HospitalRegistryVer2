@@ -13,11 +13,6 @@ namespace Open.Tests.Aids
         {
             return $"{assembly}.{name}";
         }
-        [TestMethod]
-        public void IsExtensionsTested()
-        {
-            isAllTested(assembly, Namespace("Extensions"));
-        }
         [TestMethod] public void IsTested() { isAllTested(base.Namespace("Aids")); }
     }
 }
